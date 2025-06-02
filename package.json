@@ -2,6 +2,9 @@
   "name": "eminent-earth",
   "type": "module",
   "version": "0.0.1",
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,6 +12,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.8.1"
+    "astro": "^5.8.1",
+    "astro-icon": "^1.1.5",
+    "postcss": "^8.5.4",
+    "postcss-preset-env": "^10.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.89.1"
   }
 }
