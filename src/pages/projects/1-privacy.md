@@ -23,7 +23,7 @@ Yeah — and that's why I thought I'd write a bit about privacy and why I find i
 
 My concern about privacy didn’t come out of nowhere. I’ve always been interested in tech and exploring all the possibilities of the modern devices we only seem to use for watching videos. Our smartphones and computers — even 10 years ago — were incredibly powerful. When COVID-19 hit, there were real concerns about privacy and ethics, especially around the COVID pass we had in France.
 
-Obviously, looking back, it's hard to fairly judge decisions made in such a chaotic time. But it still felt like being tagged. There were even comparisons in TV shows to how surveillance works in China. That’s what sparked my personal journey toward better privacy.
+Obviously, looking back, it's hard to fairly judge decisions made in such a chaotic time. But it still felt like being tagged. Some TV shows even compared aspects of the COVID pass system to the surveillance seen in more authoritarian states. While those comparisons can be exaggerated, they made me reflect on how easily such tools could be misused — and how fragile our digital freedoms can be.
 
 I wasn’t into the conspiracy theories we saw during the pandemic, but I started questioning:  
 - How is my data managed?  
