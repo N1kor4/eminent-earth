@@ -6,75 +6,110 @@ author: Nicolas Rabreau
 image: 
   src: "/public/images/post-1.jpg"
   alt: "A picture of a coder"
-description: desc
+description: Exploring Docker and self-hosting on a Raspberry Pi
 draft: false
-category: none
+category: Tech
 ---
 
-Raspberry Pi combined with Docker is basically an infinitely powerful gaming tool. Nowadays, it is very easy to find some apps that you like that are FOSS. If you don't know what FOSS is, you can read my article about it. Learning how it works and how to do it yourself is a great step toward full independence.
+## Docker & Self-Hosting on Raspberry Pi
 
-This article is more a talk about where I started, where I wanted to go, and how the journey is going (it's never-ending).
+Combining a Raspberry Pi with Docker is like unlocking infinite potential in a pocket-sized machine. These days, it’s easier than ever to find applications that are **FOSS** (Free and Open Source Software). If you’re not familiar with FOSS, feel free to check out my article about it — it’s a great first step toward digital independence.
 
-To keep it short, my first idea was to make a VPN (or a Tailnet, as we will see later) in order to play on my gaming computer from my laptop (streaming). But I finally discovered Sunshine and Moonlight, which are a lot more efficient than Steamstream inside a Tailnet, aha.  
-Then, with my association, we were making a website so I thought of buying a Raspberry Pi for this occasion, but I finally bought it later on, discovering the infinite possibilities of FOSS.
-
-Well, the first thing to do is actually to buy one Raspberry Pi! Then you can dive into this experience (you will also have to buy a few accessories).
-
-My first installation wasn't really a success — it was somehow more of a mess. I was really cautious about following the tutorial, but when you don't understand what you are doing, it's complicated. This is where commitment plays a role. Failure is part of the job. If you don't fail, you don't learn.  
-Having to mount and unmount the device was really interesting. Moreover, as we were discovering PCBs in school, that looked familiar (even if it's very different, you have pins and screws, ahah).
-
-After a few hours (days) of building, I achieved installing my first PiOS and first Linux-based OS. So that's it, I was onto it. I took an HDMI cable and started to work on it.
-
-In order to save you some time if you want to follow my path, here are some videos explaining how it works and how to build your own. If you don’t mind, I currently have a Raspberry Pi 5 with a 500GB SSD and 8GB of RAM running PiLiteOS.
-
-I then figured out that everything I wanted to do was purely command line, and it was a mess to change the input of my screen, so I decided to go full command line with SSH access (don't forget what we said in the security section). But this was also a mess due to admin privileges, and I had a hard time connecting. Now, it's as easy as typing my name.
-
-So you better be prepared by understanding how SSH requests are made, and I leave a link for you:
-
-[Link to SSH tutorial or resource]
-
-Well, our first steps are completed. We now have access to our Pi via command line and we're ready to start our adventure for good.
-
-The first thing to understand with Docker is that it works with a file that contains all the information about the running services. The `docker-compose.yml` is a YAML file that contains your "application". It's easy to understand, but to follow my path, I leave you the resources I've read!
-
-The first thing I advise you to compose is Portainer. It will be much easier to manage all your data and your apps because trust me, it was a bit of a hell going through all the issues without a user interface!
-
-Watch this:
-
-Once Portainer is installed, it's very easy to move on. You just have to be careful with:  
-- The Docker Compose file you are using  
-- How your networks are managed  
-- Where your data is stored  
-- Updates (it's easy to do a crontab for your device)  
-- Updates for Docker (easy with WatchTower)  
-- Security of your tools (admin password)
-
-Some apps I have installed:  
-- Nextcloud  
-- Bitwarden  
-- Firefly III  
-- Tandoor Recipes  
-
-I also advise you to install these not on Portainer but directly on your Pi, as it's more secure since they are only accessible via your SSH key on your Pi:  
-- Pi-hole (to manage your Wi-Fi)  
-- Traefik (to manage routes)  
-- Tailscale (if you want to create a Tailnet)
-
-Pi-hole can be great, but be careful of your admin network (and you should have a look at your admin Wi-Fi router because you'll need to create port forwarding if you want to publish on the web).  
-Traefik is useful...  
-What's a Tailnet and why is it so enjoyable? Well, it basically creates a network (but not tunneling like a VPN). It's kind of another layer of network between authorized devices. That lets you SSH into your device from work to home, for example. And if you're on vacation and want to access your Nextcloud account, it's possible even if your Pi is at your home!
-
-Once you have done all that, it's really enjoyable to create your own database / import from an existing one!  
-You have now your own data.
-
-### Tips for more security:
-- If you only store your data in one place and you get robbed, or your house burns down, or something else happens, you lose everything!  
-- I still advise you to keep your precious data in a cloud from a provider (less secure, but if you choose the right one, it's all okay).  
-- Make backups often in case a crash happens.  
-- Try not to expose too many ports that you don't want other people to see (you can expose only your website, for example, and keep Nextcloud within your Tailnet).
-
-Screenshots or a diagram of my architecture?
+This post is more of a reflection than a guide — where I started, what I was trying to build, and how the journey is still evolving (spoiler: it never really ends).
 
 ---
 
-*This post is part personal reflection, part call to action. If you’ve made it this far, thank you — and maybe take one small step today to protect your privacy.*
+## Where It All Began
+
+My original idea was to set up a VPN — or more specifically, a **Tailnet** (we’ll get to that) — so I could stream games from my desktop gaming PC to my laptop. I tried Steam Remote Play over a Tailnet, but then I discovered **Sunshine + Moonlight**. Game-changing. Much smoother and more efficient.
+
+Around the same time, I was working with my association on a website, and thought, “Why not get a Raspberry Pi for this project?” I eventually bought one, and that opened the door to the **world of FOSS and self-hosting**.
+
+---
+
+## Step 1: Getting Your Pi
+
+First things first — buy a Raspberry Pi. You’ll also need some accessories like a power supply, SD card, maybe an SSD if you want to go big.
+
+> ⚠️ My first install? A total mess.  
+I followed tutorials carefully, but not fully understanding what I was doing made things more complicated. That’s where **persistence** comes in. You’ll mess up. That’s okay. Messing up is how you learn.
+
+Mounting, unmounting, flashing OS images — it all felt a bit technical at first. But with some time (okay, *a lot* of time), I got **Pi OS** up and running. That was my first real dive into Linux.
+
+Once connected via HDMI, I started experimenting — and eventually realized that everything I wanted could be done via **command line**.
+
+---
+
+## Going Headless: SSH and Command Line Life
+
+I ditched the HDMI setup and switched to headless mode, accessing my Pi via SSH.
+
+> 🛡️ Reminder: Know your SSH basics — it’s fundamental for remote access.  
+At first, it was a pain (admin privileges, connection issues, etc.), but now it’s as easy as typing my username. Here's a helpful resource to get you started:  
+👉 [Link to SSH tutorial]
+
+---
+
+## Enter Docker
+
+Now the fun part begins. Docker is a tool that lets you run apps in isolated environments called **containers**. You manage them using a file called `docker-compose.yml` — a simple YAML configuration that defines what runs, how, and where.
+
+I recommend starting with **Portainer**, a web interface to manage Docker containers. Trust me, setting everything up manually without a UI was a nightmare. Portainer makes it way more beginner-friendly.
+
+### 🧱 Setup Checklist:
+- A valid `docker-compose.yml` file
+- Well-managed network configuration
+- Clear folder paths for your app data
+- A system for updates (like crontab or Watchtower)
+- Strong admin credentials
+
+---
+
+## My Current Setup
+
+💻 **Device:** Raspberry Pi 5  
+💽 **Storage:** 500GB SSD  
+🧠 **RAM:** 8GB  
+🧾 **OS:** PiLiteOS
+
+### 📦 Apps I've Installed (via Portainer):
+- **Nextcloud** – personal cloud storage
+- **Bitwarden** – password manager
+- **Firefly III** – personal finance
+- **Tandoor Recipes** – recipe management
+
+### 🔐 Apps I Run Outside Portainer (for extra security):
+- **Pi-hole** – blocks ads and tracking across your network
+- **Traefik** – reverse proxy to manage routes
+- **Tailscale** – to create a private Tailnet
+
+> ⚠️ Important:  
+Pi-hole is super powerful, but it needs careful setup — especially your router’s admin settings and port forwarding rules if you want your services to be public.
+
+---
+
+## 🌐 What's a Tailnet?
+
+A Tailnet is a private mesh network between your devices — **like a VPN but easier to manage**. It doesn’t tunnel traffic through a central server, but connects devices securely as peers.  
+For example, you can SSH into your Pi from anywhere, or access your Nextcloud while you're on vacation.
+
+---
+
+## Final Tips: Security & Stability
+
+- 🔁 **Backups**: Always back up your data. Keep at least one copy off-site.
+- ☁️ **Cloud fallback**: Use a trusted cloud provider as a secondary backup if you're not 100% self-hosted.
+- 🔒 **Close unused ports**: Only expose what's necessary (like your public website). Keep sensitive apps within your Tailnet.
+- 🧠 **Stay informed**: Keep learning. The self-hosting community is huge and super helpful.
+
+---
+
+### 🤖 What's Next?
+
+At this point, you're in control of your digital life. You’re running your own cloud, your own password vault, and your own personal web — and it's all hosted by you. That’s powerful.
+
+🧱 I’ll share a diagram or screenshots of my setup soon — stay tuned!
+
+---
+
+*This post is part personal reflection, part call to action. If you’ve made it this far, thank you — and maybe take one small step today to take back control of your data and privacy.*
