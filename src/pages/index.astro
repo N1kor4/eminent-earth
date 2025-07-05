@@ -1,14 +1,51 @@
 ---
 //components imports
 import MainLayout from "../layouts/MainLayout.astro";
-
-const isRed = true;
 ---
 
 <MainLayout title="My Portfolio" description="Welcome to my portfolio page. Here you can find my projects and skills.">
-<p>
-    Hi, I’m Nicolas, an engineering student from Phelma passionate about quantum technologies, privacy, and low-level systems.
-    Currently interning at EPFL in cryo quantum hardware.
-</p>
-</MainLayout>
+  <div class="profile">
+    <img src="../public/nicolasrabreau.jpeg" alt="Picture of Nicolas" class="profile-pic" />
+    <div class="intro">
+      <h1>Hey! Welcome to my website.</h1>
+      <p>
+        I’m Nicolas, an engineering student from Phelma passionate about quantum technologies,
+        privacy, and sport.
+      </p>
+      <hr />
+      <div class="social-links">
+        <a href="www.linkedin.com/in/nicolas-rabreau/">LinkedIn</a>
+        <a href="https://github.com/N1kor4">GitHub</a>
+        <a href="/about">Contact</a>
+      </div>
+    </div>
+  </div>
 
+  <hr />
+
+  <section class="overview">
+    <h2>Overview of my education pages</h2>
+    <div class="page-grid">
+      <a href="/studies/1-classes-prepa.md">Classes préparatoires</a>
+      <a href="/studies/2-phelma.md">Phelma</a>
+      <a href="/studies/3-EPFL-intern.md">EPFL</a>
+      <a href="/studies/4-Cleanroom.md">Cleanroom</a>
+      <a href="/studies/5-quantum-labs.md">Quantum Labs</a>
+      <a href="/studies/6-IT.md">IT projects</a>
+      <a href="/studies/7-association.md">Student Office</a>
+      <a href="/studies/8-CEA.md">CEA</a>
+    </div>
+  </section>
+
+  <section class="overview">
+    <h2>Overview of my privacy/tech pages</h2>
+    <div class="page-grid">
+      <a href="/tech/1-privacy">Privacy</a>
+      <a href="/tech/2-security">Security</a>
+      <a href="/tech/3-foss">FOSS</a>
+      <a href="/tech/4-docker">Docker</a>
+      <a href="/tech/5-astro">Astro</a>
+      <a href="/tech/6-fixing">Fixing stuff</a>
+    </div>
+  </section>
+</MainLayout>

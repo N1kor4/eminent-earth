@@ -627,3 +627,51 @@ header {
 .sidebar [aria-label="Blog categories"]{
   margin-block: 0;
 }
+
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.intro {
+  max-width: 600px;
+}
+
+.social-links a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.overview {
+  margin-top: 2rem;
+}
+
+.page-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.page-grid a {
+  padding: 1rem 2rem;
+  background-color: #eee;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.page-grid a:hover {
+  background-color: #ddd;
+}
