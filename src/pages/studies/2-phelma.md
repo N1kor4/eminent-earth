@@ -13,5 +13,4 @@ category: none
 
 ## Engineering degree in Physics, Nanotech, and Embedded Systems
 
-Core subjects: Electromagnetism, Quantum Physics, Materials, Embedded C, Signal Processing
-Focus on quantum systems and semiconductor devices
+Mon arrivé à Phelma est peut-être le plus gros changement qu'il y ait eu dans ma vie. A 800km de chez moi, j'ai dû recommencer de zéro mais c'était assez facile 

@@ -1,37 +1,48 @@
 ---
-// library imports
-import { Image } from "astro:assets";
-
-// component imports
 import Link from "./Link.astro";
-
-// utils imports
 import { slugify, formatDate } from "../js/utils";
 
 const { frontmatter, url, tagType } = Astro.props;
-
 const Tag = tagType;
-
-const { title, date, author, image, description, category } = frontmatter;
+const { title, date, author, description } = frontmatter;
 ---
 
 <article class="card">
-
-  <a href={url} aria-hidden="true" tabindex="-1">
-
-  </a>
   <div class="content">
     <div>
       <Tag class="h3">
         <a href={url}>{title}</a>
       </Tag>
       <small>
-        by <a href={`/author/${slugify(author)}/`}>{author}</a> • {
-          formatDate(date)
-        }
+        by <a href={`/author/${slugify(author)}/`}>{author}</a> • {formatDate(date)}
       </small>
     </div>
     <p>{description}</p>
-    <Link href={url} text="Read Post" style="secondary" />
+    <Link href={url} text="Read Post" style="primary" />
   </div>
 </article>
+
+<style>
+.card {
+  background: var(--color-surface, dark);
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: 8px;
+  padding: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+.card a {
+  text-decoration: none;
+}
+.card p {
+  margin-top: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+</style>
