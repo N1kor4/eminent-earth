@@ -14,9 +14,9 @@ const { items } = Astro.props; // items : tableau d'objets {title, url, date, de
       >
         <div class="content">
           <span class="date">{new Date(item.date).getFullYear()}</span>
-          <h3><a href={item.url}>{item.title}</a></h3>
+          <h3><a>{item.title}</a></h3>
           <p>{item.description}</p>
-          <a href={item.url} class="read-more">Learn more →</a>
+          <a href={item.link} class="read-more">Learn more →</a>
         </div>
       </div>
     );

@@ -3,23 +3,23 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Timeline from "../components/Timeline.astro";
 
 const studies = [
-  { title: "Classes préparatoires", link: "/studies/1-classes-prepa.md", description: "Deux ans de prépa scientifique intensive." },
-  { title: "Phelma", link: "/studies/2-phelma.md", description: "Formation d’ingénieur à Grenoble INP Phelma." },
-  { title: "EPFL", link: "/studies/3-EPFL-intern.md", description: "Stage et recherche à l’EPFL." },
-  { title: "Cleanroom", link: "/studies/4-Cleanroom.md", description: "Travail en salle blanche sur la microfabrication." },
-  { title: "Quantum Labs", link: "/studies/5-quantum-labs.md", description: "Expériences en physique quantique." },
-  { title: "IT Projects", link: "/studies/6-IT.md", description: "Projets informatiques divers." },
-  { title: "Student Office", link: "/studies/7-association.md", description: "Engagement associatif." },
-  { title: "CEA", link: "/studies/8-CEA.md", description: "Stage au CEA." }
+  { title: "Classes préparatoires", link: "/studies/1-classes-prepa", description: "Deux ans de prépa scientifique intensive." },
+  { title: "Phelma", link: "/studies/2-phelma", description: "Formation d’ingénieur à Grenoble INP Phelma." },
+  { title: "EPFL", link: "/studies/3-EPFL-intern", description: "Stage et recherche à l’EPFL." },
+  { title: "Cleanroom", link: "/studies/4-Cleanroom", description: "Travail en salle blanche sur la microfabrication." },
+  { title: "Quantum Labs", link: "/studies/5-quantum-labs", description: "Expériences en physique quantique." },
+  { title: "IT Projects", link: "/studies/6-IT", description: "Projets informatiques divers." },
+  { title: "Student Office", link: "/studies/7-association", description: "Engagement associatif." },
+  { title: "CEA", link: "/studies/8-CEA", description: "Stage au CEA." }
 ];
 
 const projects = [
-  { title: "Privacy", link: "/tech/1-privacy", description: "..." },
-  { title: "Security", link: "/tech/2-security", description: "..." },
-  { title: "FOSS", link: "/tech/3-foss", description: "..." },
-  { title: "Docker", link: "/tech/4-docker", description: "..." },
-  { title: "Astro", link: "/tech/5-astro", description: "..." },
-  { title: "Fixing stuff", link: "/tech/6-fixing", description: "..." }
+  { title: "Privacy", link: "/projects/1-privacy", description: "Privacy is one of the primodial things people use to have but nowadays, it's something we actually need to fight to have" },
+  { title: "Security", link: "/projects/2-security", description: "Security on the web is the first reason people tends to let their privacy away. Let's find some ways to protect you and your surrondings" },
+  { title: "FOSS", link: "/projects/3-foss", description: "FOSS is for Free and Open Source Software. One can see this as volonteering. Apps made by people for people. Thoose are apps you can trust and must use" },
+  { title: "Docker", link: "/projects/4-docker", description: "Docker is a nice tool to have thoose apps hosted in local on your computer for better control of your data and less money !" },
+  { title: "Website", link: "/projects/5-astro", description: "I have made this website with Astro as it's an easy tool (less than ChatGPT). You can also do you own !" },
+  { title: "Fixing stuff", link: "/projects/6-fixing", description: "Having issues with everything you try to install ? Let's walk into how to fix stuff" }
 ];
 ---
 
@@ -51,7 +51,7 @@ const projects = [
 
   <!-- Projects timeline -->
   <section>
-    <h2 class="h2" style="margin-bottom: 1rem;">My Projects</h2>
+    <h2 class="h2" style="margin-bottom: 1rem;">Take control back over your Data</h2>
     <Timeline items={projects} orientation="horizontal" />
   </section>
 
