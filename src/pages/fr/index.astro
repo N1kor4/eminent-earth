@@ -1,0 +1,107 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Timeline from "../../components/Timeline.astro";
+
+const studies = [
+  { title: "Classes préparatoires", link: "/studies/1-classes-prepa", description: "Deux ans de prépa scientifique intensive." },
+  { title: "Phelma", link: "/studies/2-phelma", description: "Formation d’ingénieur à Grenoble INP Phelma." },
+  { title: "EPFL", link: "/studies/3-EPFL-intern", description: "Stage et recherche à l’EPFL." },
+  { title: "Cleanroom", link: "/studies/4-Cleanroom", description: "Travail en salle blanche sur la microfabrication." },
+  { title: "Quantum Labs", link: "/studies/5-quantum-labs", description: "Expériences en physique quantique." },
+  { title: "IT Projects", link: "/studies/6-IT", description: "Projets informatiques divers." },
+  { title: "Student Office", link: "/studies/7-association", description: "Engagement associatif." },
+  { title: "CEA", link: "/studies/8-CEA", description: "Stage au CEA." }
+];
+
+const projects = [
+  { title: "Privacy", link: "/projects/1-privacy", description: "Privacy is one of the primodial things people use to have but nowadays, it's something we actually need to fight to have" },
+  { title: "Security", link: "/projects/2-security", description: "Security on the web is the first reason people tends to let their privacy away. Let's find some ways to protect you and your surrondings" },
+  { title: "FOSS", link: "/projects/3-foss", description: "FOSS is for Free and Open Source Software. One can see this as volonteering. Apps made by people for people. Thoose are apps you can trust and must use" },
+  { title: "Docker", link: "/projects/4-docker", description: "Docker is a nice tool to have thoose apps hosted in local on your computer for better control of your data and less money !" },
+  { title: "Website", link: "/projects/5-astro", description: "I have made this website with Astro as it's an easy tool (less than ChatGPT). You can also do you own !" },
+  { title: "Fixing stuff", link: "/projects/6-fixing", description: "Having issues with everything you try to install ? Let's walk into how to fix stuff" }
+];
+---
+
+<MainLayout title="My Portfolio" description="Welcome to my portfolio page. Here you can find my projects and skills.">
+
+  <!-- Hero section -->
+  <section class="hero">
+    <img src="../public/nicolasrabreau.jpeg" alt="Picture of Nicolas" class="profile-pic" />
+    <div class="hero-text">
+      <h1>Salut et bienvenue sur mon site internet !</h1>
+      <p>Je m'appelle Nicolas, je suis étudiant ingénieur à Phelma, passionné de technologies quantiques, de vie privée, mais aussi de sport.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/nicolas-rabreau/">LinkedIn</a>
+        <a href="https://github.com/N1kor4">GitHub</a>
+        <a href="/about">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-separator"/>
+
+  <!-- Studies timeline -->
+  <section>
+    <h2 class="h2" style="margin-bottom: 1rem;">Mon parcours académique</h2>
+    <Timeline items={studies} orientation="vertical" />
+  </section>
+
+  <hr class="section-separator" />
+
+</MainLayout>
+
+<style>
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 3rem auto 1rem auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.social-links a {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Barre séparatrice entre sections */
+.section-separator {
+  border: none;
+  height: 6px;
+  background-color: #ddd;
+  max-width: 900px;
+  margin: 3rem auto;
+  border-radius: 3px;
+}
+</style>

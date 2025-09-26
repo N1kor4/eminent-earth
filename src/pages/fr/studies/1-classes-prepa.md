@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
+layout: "../../../layouts/ProjectLayout.astro"
 title: Preparatory Classes
 date: 2023-06-07
 author: Nicolas Rabreau

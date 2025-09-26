@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
+layout: "../../../layouts/ProjectLayout.astro"
 title: Free and Open-Source Software
 date: 2025-06-07
 author: Nicolas Rabreau

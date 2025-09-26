@@ -1,0 +1,96 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Timeline from "../../components/Timeline.astro";
+
+const allStudies = await Astro.glob("../en/studies/*.md");
+
+// Map to the structure your Timeline expects
+const studies = allStudies.map((study) => ({
+  title: study.frontmatter.title,
+  description: study.frontmatter.description,
+  link: study.url
+}));
+---
+
+<MainLayout title="My Portfolio" description="Welcome to my portfolio page. Here you can find my projects and skills.">
+
+  <!-- Hero section -->
+  <section class="hero">
+    <img src="../public/nicolasrabreau.jpeg" alt="Picture of Nicolas" class="profile-pic" />
+    <div class="hero-text">
+      <h1>Hey! Welcome to my website.</h1>
+      <p>I’m Nicolas, an engineering student at Phelma who is passionate about quantum technologies, privacy and sport.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/nicolas-rabreau/">LinkedIn</a>
+        <a href="https://github.com/N1kor4">GitHub</a>
+        <a href="/about">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-separator"/>
+
+  <!-- Studies timeline -->
+  <section>
+    <h2 class="h2">My academic background</h2>
+    <Timeline items={studies} orientation="vertical"/>
+  </section>
+
+  <hr class="section-separator" />
+
+</MainLayout>
+
+<style>
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 3rem auto 1rem auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.social-links a {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Barre séparatrice entre sections */
+.section-separator {
+  border: none;
+  height: 6px;
+  background-color: #ddd;
+  max-width: 900px;
+  margin: 3rem auto;
+  border-radius: 3px;
+}
+</style>

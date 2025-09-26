@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
+layout: "../../../layouts/ProjectLayout.astro"
 title: Making This Website
 date: 2025-06-07
 author: Nicolas Rabreau
@@ -7,7 +7,7 @@ image: {
   src: "/images/post-1.jpg",
   alt: "A picture of a coder",
 }
-description: How I built this site using Astro and what I learned along the way
+description: I have made this website with Astro as it's an easy tool (less than ChatGPT). You can also do you own !
 draft: false
 category: Portfolio
 ---

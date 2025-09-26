@@ -1,0 +1,32 @@
+---
+// LangSwitcher.astro
+---
+<a href="#" id="lang-switcher" class="lang-switcher" aria-label="Switch language">
+  🌐
+</a>
+
+<style>
+.lang-switcher {
+  text-decoration: none; /* removes underline */
+  vertical-align: middle; /* keeps it aligned with text */
+  display: inline-flex;   /* makes vertical alignment cleaner */
+  align-items: center;
+  font-size: 1.2em;      /* optional: match nav text size */
+  cursor: pointer;        /* optional: shows it’s clickable */
+}
+</style>
+
+<script is:inline>
+  const switcher = document.getElementById("lang-switcher");
+  switcher.addEventListener("click", (e) => {
+    e.preventDefault();
+    const currentPath = window.location.pathname;
+    const newLang = currentPath.startsWith("/fr/") ? "en" : "fr";
+    const newPath = currentPath.replace(/^\/(fr|en)/, `/${newLang}`);
+    window.location.href = newPath;
+  });
+
+  switcher.textContent = window.location.pathname.startsWith("/fr/") ? "🇬🇧" : "🇫🇷";
+</script>
+
+

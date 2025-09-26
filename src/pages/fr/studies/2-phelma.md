@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
+layout: "../../../layouts/ProjectLayout.astro"
 title: Phelma – Grenoble INP
 author: Nicolas Rabreau
 image: {

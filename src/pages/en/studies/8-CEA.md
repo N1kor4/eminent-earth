@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
+layout: "../../../layouts/ProjectLayout.astro"
 title: Ferroelectric Memory Probe Station Project (CEA Leti)
 date: 2025-06-07
 author: Nicolas Rabreau

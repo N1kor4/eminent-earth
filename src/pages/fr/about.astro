@@ -1,0 +1,29 @@
+---
+//components imports
+import Link from "../../components/Link.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<MainLayout title="About" description="My about page">
+    <section class="Container about" aria-label="About Me">
+        <img 
+            src="/nicolasrabreau.jpeg" 
+            alt="My headshot" 
+            width="200" 
+            height="200" 
+        />
+    
+    
+        <div class="content">
+            <h1 class="h1"> À propos de moi </h1>
+            <p>
+            Bonjour ! Je suis ingénieur en microélectronique et physique quantique, passionné par les technologies modernes, la confidentialité et les systèmes de bas niveau. J'aime me plonger dans les défis techniques et je m'efforce constamment d'élargir mes connaissances.
+            </p>
+        </div>
+        <Link
+            href="mailto:nicolas.rabreau@grenoble-inp.org"
+            style="secondary"
+            text="Contact me"
+            />
+    </section>
+</MainLayout>

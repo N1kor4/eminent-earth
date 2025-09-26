@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
+layout: "../../../layouts/ProjectLayout.astro"
 title: Why Privacy Matters
 date: 2025-06-07
 author: Nicolas Rabreau
@@ -7,7 +7,7 @@ image: {
   src: "/public/images/post-1.jpg",
   alt: "A picture of a coder",
 }
-description: A personal reflection on digital privacy and why it matters now more than ever
+description: Privacy is one of the primodial things people use to have but nowadays, it's something we actually need to fight to have
 draft: false
 category: Philosophy
 ---
@@ -38,7 +38,7 @@ And once it's gone, it's hard to get back.
 
 ### Beyond Conspiracies
 
-Let me be clear: I wasn’t into the conspiracy theories that exploded during that time. I’m not a tinfoil-hat type. But I **did start asking questions** — serious ones:
+Let me be clear: I’m not a tinfoil-hat type. But I **did start asking questions** — serious ones:
 
 - How much data do apps collect about me?
 - What’s really happening behind the scenes with “free” services?
