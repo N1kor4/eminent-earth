@@ -7,7 +7,7 @@ image: {
   src: "/public/images/post-1.jpg",
   alt: "Une photo d'un codeur",
 }
-description: Expériences pratiques en optique quantique : statistiques des photons, interférométrie, intrication et codage de qubits.
+description: Expériences pratiques en optique quantique - statistiques des photons, interférométrie, intrication et codage de qubits.
 draft: false
 category: none
 ---
