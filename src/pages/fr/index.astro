@@ -2,25 +2,14 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import Timeline from "../../components/Timeline.astro";
 
-const studies = [
-  { title: "Classes préparatoires", link: "/studies/1-classes-prepa", description: "Deux ans de prépa scientifique intensive." },
-  { title: "Phelma", link: "/studies/2-phelma", description: "Formation d’ingénieur à Grenoble INP Phelma." },
-  { title: "EPFL", link: "/studies/3-EPFL-intern", description: "Stage et recherche à l’EPFL." },
-  { title: "Cleanroom", link: "/studies/4-Cleanroom", description: "Travail en salle blanche sur la microfabrication." },
-  { title: "Quantum Labs", link: "/studies/5-quantum-labs", description: "Expériences en physique quantique." },
-  { title: "IT Projects", link: "/studies/6-IT", description: "Projets informatiques divers." },
-  { title: "Student Office", link: "/studies/7-association", description: "Engagement associatif." },
-  { title: "CEA", link: "/studies/8-CEA", description: "Stage au CEA." }
-];
+const allStudies = await Astro.glob("../fr/studies/*.md");
 
-const projects = [
-  { title: "Privacy", link: "/projects/1-privacy", description: "Privacy is one of the primodial things people use to have but nowadays, it's something we actually need to fight to have" },
-  { title: "Security", link: "/projects/2-security", description: "Security on the web is the first reason people tends to let their privacy away. Let's find some ways to protect you and your surrondings" },
-  { title: "FOSS", link: "/projects/3-foss", description: "FOSS is for Free and Open Source Software. One can see this as volonteering. Apps made by people for people. Thoose are apps you can trust and must use" },
-  { title: "Docker", link: "/projects/4-docker", description: "Docker is a nice tool to have thoose apps hosted in local on your computer for better control of your data and less money !" },
-  { title: "Website", link: "/projects/5-astro", description: "I have made this website with Astro as it's an easy tool (less than ChatGPT). You can also do you own !" },
-  { title: "Fixing stuff", link: "/projects/6-fixing", description: "Having issues with everything you try to install ? Let's walk into how to fix stuff" }
-];
+// Map to the structure your Timeline expects
+const studies = allStudies.map((study) => ({
+  title: study.frontmatter.title,
+  description: study.frontmatter.description,
+  link: study.url
+}));
 ---
 
 <MainLayout title="My Portfolio" description="Welcome to my portfolio page. Here you can find my projects and skills.">
@@ -29,8 +18,8 @@ const projects = [
   <section class="hero">
     <img src="../public/nicolasrabreau.jpeg" alt="Picture of Nicolas" class="profile-pic" />
     <div class="hero-text">
-      <h1>Salut et bienvenue sur mon site internet !</h1>
-      <p>Je m'appelle Nicolas, je suis étudiant ingénieur à Phelma, passionné de technologies quantiques, de vie privée, mais aussi de sport.</p>
+      <h1>Hey! Welcome to my website.</h1>
+      <p>I’m Nicolas, an engineering student at Phelma who is passionate about quantum technologies, privacy and sport.</p>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/nicolas-rabreau/">LinkedIn</a>
         <a href="https://github.com/N1kor4">GitHub</a>
@@ -43,8 +32,8 @@ const projects = [
 
   <!-- Studies timeline -->
   <section>
-    <h2 class="h2" style="margin-bottom: 1rem;">Mon parcours académique</h2>
-    <Timeline items={studies} orientation="vertical" />
+    <h2 class="h2">My academic background</h2>
+    <Timeline items={studies} orientation="vertical"/>
   </section>
 
   <hr class="section-separator" />
