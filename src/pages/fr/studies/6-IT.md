@@ -1,57 +1,56 @@
 ---
 layout: "../../../layouts/ProjectLayout.astro"
-title: School Projects
+title: Projets Étudiants
 date: 2025-06-07
 author: Nicolas Rabreau
 image: {
   src: "/public/images/post-1.jpg",
-  alt: "A picture of a coder",
+  alt: "Une photo d'un codeur",
 }
-description: A selection of small coding and simulation projects done during my studies, ranging from physics modeling to fun programming exercises.
+description: Une sélection de petits projets de codage et de simulation réalisés pendant mes études, allant de la modélisation physique à des exercices de programmation ludiques.
 draft: false
 category: none
 ---
 
-## Overview
+## Aperçu
 
-Not all projects need to be huge research ones — some of the most useful (and fun) were small exercises during classes. They were opportunities to **learn new tools, test ideas quickly, and explore different ways of thinking**. You can find all my projects on my Github page : https://github.com/N1kor4. Here are a few highlights:
-
----
-
-### Angle of a droplet (Python)
-
-A short project in fluid mechanics: measuring and simulating the **contact angle of a water droplet** on a surface. It introduced me to image analysis and how physics meets coding.  
+Tous les projets n’ont pas besoin d’être de grandes recherches — certains des plus utiles (et amusants) étaient de petits exercices réalisés en cours. Ils ont été des occasions de **découvrir de nouveaux outils, tester rapidement des idées et explorer différentes façons de penser**. Vous pouvez retrouver tous mes projets sur ma page Github : https://github.com/N1kor4. Voici quelques exemples marquants :
 
 ---
 
-### Tetris Game (Python)
+### Angle d’une goutte (Python)
 
-A playful side project: coding a Tetris game from scratch, later made **playable directly in a browser window**. It was less about reinventing the wheel and more about improving my logic, structuring a project, and getting a first taste of interactive applications.  
-
----
-
-### MATLAB simulations
-
-- **Electromagnetic waveguide** modeling  
-- **Magnetic train** levitation study  
-
-These were my first steps using MATLAB for physics, and I enjoyed how fast it can turn equations into actual simulations.  
+Un petit projet en mécanique des fluides : mesurer et simuler **l’angle de contact d’une goutte d’eau** sur une surface. Il m’a initié à l’analyse d’images et à la rencontre entre physique et programmation.  
 
 ---
 
-### LabVIEW initiation
+### Jeu Tetris (Python)
 
-Small-scale scripts to get started with **LabVIEW**, mainly for simple data acquisition and instrument control. A useful introduction to graphical programming for labs.  
-
----
-
-### Python utilities
-
-Automation scripts for **plotting and data processing**. Nothing too fancy, but incredibly practical when working with repetitive experimental results.  
+Un projet ludique : coder un jeu de Tetris depuis zéro, rendu ensuite **jouable directement dans une fenêtre de navigateur**. L’objectif n’était pas de réinventer la roue, mais d’améliorer ma logique, structurer un projet et découvrir les premières applications interactives.  
 
 ---
 
-## Reflection
+### Simulations MATLAB
 
-These projects may not be "big" in scope, but they were **building blocks**: each one taught me something new, whether it was physics, coding, or simply a smarter way of solving problems. They also shaped the way I approach bigger projects later on.  
+- Modélisation de **guides d’ondes électromagnétiques**  
+- Étude de **lévitation d’un train magnétique**  
 
+C’étaient mes premiers pas avec MATLAB pour la physique, et j’ai apprécié la rapidité avec laquelle on peut transformer des équations en simulations concrètes.  
+
+---
+
+### Initiation à LabVIEW
+
+Scripts à petite échelle pour se familiariser avec **LabVIEW**, principalement pour l’acquisition de données et le contrôle d’instruments. Une introduction utile à la programmation graphique pour les laboratoires.  
+
+---
+
+### Utilitaires Python
+
+Scripts d’automatisation pour le **traçage et le traitement de données**. Rien de très sophistiqué, mais incroyablement pratique pour gérer des résultats expérimentaux répétitifs.  
+
+---
+
+## Réflexion
+
+Ces projets n’étaient peut-être pas “grands” en termes d’envergure, mais ils ont été des **briques de construction** : chacun m’a appris quelque chose de nouveau, que ce soit en physique, en programmation, ou simplement une manière plus efficace de résoudre des problèmes. Ils ont également influencé ma manière d’aborder les projets plus ambitieux par la suite.
