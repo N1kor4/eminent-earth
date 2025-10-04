@@ -1,6 +1,6 @@
 ---
 layout: "../../../layouts/ProjectLayout.astro"
-title: Associative & Volunteer Experience
+title: Expérience associative et bénévole
 date: 2025-06-07
 author: Nicolas Rabreau
 image: {
