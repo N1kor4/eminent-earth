@@ -1,11 +1,19 @@
 ---
 const { items } = Astro.props; // items: array of { title, url, date, description }
+
 ---
 
 <div class="timeline">
   {items.map((item, i) => {
     const side = i % 2 === 0 ? "left" : "right";
     const translateY = -5 * Math.floor(i / 2) - 2.5 * (i % 2);
+
+
+    // Supprime n'importe quelle extension (.md, .rm, .html, etc.)
+    const cleanUrl = item.url
+      ? item.url.replace(/\.[^/.]+$/, '')  // just strip the extension, no prefix added
+      : '#';
+
     return (
       <div
         class={`timeline-item ${side}`}
@@ -13,11 +21,19 @@ const { items } = Astro.props; // items: array of { title, url, date, descriptio
       >
         <div class="content">
           <span class="date">{new Date(item.date).getFullYear()}</span>
-          <h3>
-            <a href={item.url || '#'}>{item.title}</a>
-          </h3>
+          <h2>
+            {cleanUrl ? (
+              <a href={cleanUrl}>
+                {item.title}
+              </a>
+            ) : (
+              item.title
+            )}
+          </h2>
           <p>{item.description}</p>
-          <a href={item.url || '#'} class="read-more">Learn more →</a>
+          {cleanUrl && (
+            <a href={cleanUrl} class="read-more">Learn more →</a>
+          )}
         </div>
       </div>
     );
@@ -26,7 +42,6 @@ const { items } = Astro.props; // items: array of { title, url, date, descriptio
 
 <style>
 :root {
-  /* These can be customized globally via light/dark mode support */
   --color-surface: #fff;
   --color-surface-dark: #1e1e1e;
   --color-border: #ddd;
@@ -88,9 +103,9 @@ const { items } = Astro.props; // items: array of { title, url, date, descriptio
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
-.content h3 {
+.content h2 {
   margin: 0.5rem 0 0.25rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 .content a {
   color: var(--accent-color);

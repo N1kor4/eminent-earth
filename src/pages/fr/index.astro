@@ -7,7 +7,7 @@ const allStudies = import.meta.glob("./studies/*.md", { eager: true });
 const studies = Object.values(allStudies).map((study: any) => ({
   title: study.frontmatter.title,
   description: study.frontmatter.description,
-  link: study.url
+  url: study.url
 }));
 ---
 
