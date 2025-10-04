@@ -1,5 +1,5 @@
 ---
-const { items } = Astro.props; // items : tableau d'objets {title, url, date, description}
+const { items } = Astro.props; // items: array of { title, url, date, description }
 ---
 
 <div class="timeline">
@@ -14,18 +14,37 @@ const { items } = Astro.props; // items : tableau d'objets {title, url, date, de
         <div class="content">
           <span class="date">{new Date(item.date).getFullYear()}</span>
           <h3>
-            <a href={item.link || '#'}>{item.title}</a> {/* Make sure item.link exists */}
+            <a href={item.url || '#'}>{item.title}</a>
           </h3>
           <p>{item.description}</p>
-          <a href={item.link || '#'} class="read-more">Learn more →</a>
+          <a href={item.url || '#'} class="read-more">Learn more →</a>
         </div>
       </div>
     );
   })}
 </div>
 
-
 <style>
+:root {
+  /* These can be customized globally via light/dark mode support */
+  --color-surface: #fff;
+  --color-surface-dark: #1e1e1e;
+  --color-border: #ddd;
+  --color-border-dark: #333;
+  --color-text: #222;
+  --color-text-muted: #666;
+  --accent-color: #007acc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: var(--color-surface-dark);
+    --color-border: var(--color-border-dark);
+    --color-text: #eee;
+    --color-text-muted: #aaa;
+  }
+}
+
 .timeline {
   position: relative;
   max-width: 900px;
@@ -37,7 +56,7 @@ const { items } = Astro.props; // items : tableau d'objets {title, url, date, de
   content: '';
   position: absolute;
   width: 3px;
-  background-color: #ccc;
+  background-color: var(--color-border);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -57,21 +76,37 @@ const { items } = Astro.props; // items : tableau d'objets {title, url, date, de
   padding-left: 2rem;
 }
 .content {
-  background: #222;
-  border-radius: 6px;
-  padding: 0.8rem 1rem;
-  border: 1px solid #ddd;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 0.05);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   max-width: 45%;
+}
+.content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.content h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.1rem;
+}
+.content a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+.content p {
+  margin: 0.5rem 0 0.75rem;
+  color: var(--color-text);
 }
 .date {
   font-size: 0.85rem;
-  color: gray;
+  color: var(--color-text-muted);
 }
 .read-more {
   display: inline-block;
-  margin-top: 0.3rem;
   font-size: 0.85rem;
-  color: var(--accent-color, #007acc);
+  color: var(--accent-color);
 }
 </style>
