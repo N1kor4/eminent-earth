@@ -15,7 +15,9 @@ category: none
 
 After obtaining my high school diploma (BAC) with highest honors, I followed the advice of my physics and math teachers to enter the demanding world of **Classes Préparatoires aux Grandes Écoles (CPGE)**.
 
-Arriving with confidence, since I had passed the BAC fairly easily, I soon hit what students call the *“prépa wall”*. The pace, workload, and expectations were far beyond anything I had known before. It was the beginning of an intense two-year experience that left me with lasting memories — both challenging and rewarding.  
+Arriving with confidence, since I had passed the BAC fairly easily, I soon hit what students call the *“prépa wall”*. The pace, workload, and expectations were far beyond anything I had known before. It was the beginning of an intense two-year experience that left me with lasting memories — both challenging and rewarding.
+
+![Alt text](/images/prepa-chato.png)
 
 ---
 

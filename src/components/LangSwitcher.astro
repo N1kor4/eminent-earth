@@ -1,75 +1,84 @@
 ---
 // LangSwitcher.astro
+const url = new URL(Astro.request.url);
+const path = url.pathname.replace(/^\/(fr|en)/, '') || '/';
+
+const languages = [
+  { code: 'fr', label: '🇫🇷 Français' },
+  { code: 'en', label: '🇬🇧 English' },
+];
 ---
 <div class="lang-dropdown" data-lang-switcher>
-  <button class="lang-switcher" type="button" aria-haspopup="true" aria-expanded="false">🌐</button>
-  <ul class="lang-menu hidden" aria-hidden="true"></ul>
+  <button
+    class="lang-switcher"
+    type="button"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    🌐
+  </button>
+  <ul class="lang-menu hidden" aria-hidden="true">
+    {languages.map(lang => (
+      <li>
+        <a href={`/${lang.code}${path}`}>{lang.label}</a>
+      </li>
+    ))}
+  </ul>
 </div>
 
 <style>
-/* wrapper */
-.lang-dropdown { position: relative; }
+.lang-dropdown {
+  position: relative;
+}
 
-/* button */
 .lang-switcher {
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.25rem;
-  line-height: 1;
-  padding: .25rem;
+  padding: 0.25rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* menu (vertical stack) */
 .lang-menu {
   position: absolute;
   top: calc(100% + 0.4rem);
   right: 0;
-  background: var(--card-bg, #887f7f);
-  border-radius: .5rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,.12);
-  padding: .25rem 0;
-  margin: 0;
+  background: var(--color-surface, #2b2b2b);
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  padding: 0.25rem 0;
   min-width: 10rem;
   z-index: 60;
-
   display: flex;
-  flex-direction: column;    /* vertical */
+  flex-direction: column;
   gap: 0;
+  line-height: 1;
 }
 
-/* hidden state */
-.lang-menu.hidden { display: none; }
+.lang-menu.hidden {
+  display: none;
+}
 
-/* list item reset */
-.lang-menu li { list-style: none; margin: 0; padding: 0; }
+.lang-menu li {
+  list-style: none;
+}
 
-/* anchor - vertical, no underline (high specificity) */
-.lang-menu a,
-.lang-menu a:link,
-.lang-menu a:visited,
-.lang-menu a:hover,
-.lang-menu a:focus {
+.lang-menu a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: .5rem .9rem;
-  text-decoration: none !important; /* override global underline if necessary */
+  padding: 0.5rem 0.9rem;
   color: inherit;
-  border-radius: .35rem;
-  font-size: .95rem;
-  outline: none;
+  border-radius: 0.35rem;
+  font-size: inherit;
+  text-decoration: none !important;
 }
 
-/* hover / focus */
-.lang-menu a:hover {
-  text-decoration: underline;
-},
 .lang-menu a:focus {
-  background: rgba(0,0,0,0.06);
+  background: rgba(0, 0, 0, 0.06);
 }
 </style>
 
@@ -81,26 +90,15 @@
   const switcher = root.querySelector('.lang-switcher');
   const menu = root.querySelector('.lang-menu');
 
-  const currentPath = window.location.pathname;
-  // remove leading /fr or /en; ensure at least '/' remains
-  let cleanPath = currentPath.replace(/^\/(fr|en)/, '');
-  if (!cleanPath) cleanPath = '/';
-
-  // Build links preserving the rest of the path
-  menu.innerHTML = `
-    <li><a href="/fr${cleanPath}">🇫🇷 Français</a></li>
-    <li><a href="/en${cleanPath}">🇬🇧 English</a></li>
-  `;
-
   // Toggle menu visibility
   switcher.addEventListener('click', (e) => {
     e.preventDefault();
-    const isHiddenAfterToggle = menu.classList.toggle('hidden'); // true = hidden
-    menu.setAttribute('aria-hidden', isHiddenAfterToggle ? 'true' : 'false');
-    switcher.setAttribute('aria-expanded', isHiddenAfterToggle ? 'false' : 'true');
+    const isHidden = menu.classList.toggle('hidden');
+    menu.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
+    switcher.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
   });
 
-  // Close on click outside
+  // Close on outside click
   document.addEventListener('click', (e) => {
     if (!root.contains(e.target)) {
       menu.classList.add('hidden');
