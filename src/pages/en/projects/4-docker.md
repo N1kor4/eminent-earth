@@ -4,7 +4,7 @@ title: Docker & Self-Hosting
 date: 2025-06-07
 author: Nicolas Rabreau
 image: 
-  src: "/public/images/post-1.jpg"
+  src: "/images/post-1.jpg"
   alt: "A picture of a coder"
 description: Docker is a nice tool to have thoose apps hosted in local on your computer for better control of your data and less money !
 draft: false

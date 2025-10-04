@@ -4,7 +4,7 @@ title: Preparatory Classes
 date: 2023-06-07
 author: Nicolas Rabreau
 image: 
-  src: "/public/images/post-1.jpg"
+  src: "/images/post-1.jpg"
   alt: "A picture of a coder"
 description: My two-year experience in preparatory classes (CPGE) at Lycée Chateaubriand, Rennes.
 draft: false

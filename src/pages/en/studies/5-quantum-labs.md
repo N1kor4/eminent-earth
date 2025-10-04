@@ -4,7 +4,7 @@ title: Quantum Practicals
 date: 2025-06-07
 author: Nicolas Rabreau
 image: {
-  src: "/public/images/post-1.jpg",
+  src: "/images/post-1.jpg",
   alt: "A picture of a coder",
 }
 description: Hands-on experiments in quantum optics - photon statistics, interferometry, entanglement, and qubit encoding.

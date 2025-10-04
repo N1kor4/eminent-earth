@@ -4,7 +4,7 @@ title: Stage à l’EPFL
 date: 2025-06-07
 author: Nicolas Rabreau
 image: {
-  src: "/public/images/post-1.jpg",
+  src: "/images/post-1.jpg",
   alt: "Une photo d'un codeur",
 }
 description: J’ai effectué un stage de recherche à l’EPFL sur les détecteurs supraconducteurs à nanofils et l’intégration électronique quantique.

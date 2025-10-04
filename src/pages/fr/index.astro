@@ -2,10 +2,9 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import Timeline from "../../components/Timeline.astro";
 
-const allStudies = await Astro.glob("../fr/studies/*.md");
+const allStudies = import.meta.glob("./studies/*.md", { eager: true });
 
-// Map to the structure your Timeline expects
-const studies = allStudies.map((study) => ({
+const studies = Object.values(allStudies).map((study: any) => ({
   title: study.frontmatter.title,
   description: study.frontmatter.description,
   link: study.url
@@ -16,7 +15,7 @@ const studies = allStudies.map((study) => ({
 
   <!-- Hero section -->
   <section class="hero">
-    <img src="../../public/nicolasrabreau.jpeg" alt="Picture of Nicolas" class="profile-pic" />
+    <img src="../../nicolasrabreau.jpeg" alt="Picture of Nicolas" class="profile-pic" />
     <div class="hero-text">
       <h1>Salut et bienvenue sur mon site internet !</h1>
       <p>Je m'appelle Nicolas, je suis étudiant ingénieur à Phelma, passionné par les technologies quantiques, de vie privée, mais aussi de sport.</p>

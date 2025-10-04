@@ -4,7 +4,7 @@ title: Free and Open-Source Software
 date: 2025-06-07
 author: Nicolas Rabreau
 image: {
-  src: "/public/images/post-1.jpg",
+  src: "/images/post-1.jpg",
   alt: "A picture of a coder",
 }
 description: FOSS is for Free and Open Source Software. One can see this as volonteering. Apps made by people for people. Thoose are apps you can trust and must use

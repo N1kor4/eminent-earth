@@ -4,7 +4,7 @@ title: Expérience en Nanofabrication
 date: 2025-06-07
 author: Nicolas Rabreau
 image: {
-  src: "/public/images/post-1.jpg",
+  src: "/images/post-1.jpg",
   alt: "Une photo d'un codeur",
 }
 description: J’ai acquis une expérience pratique en salle blanche. J’ai travaillé en lithographie optique, gravure plasma, dépôt de métaux et caractérisation de dispositifs à Phelma.

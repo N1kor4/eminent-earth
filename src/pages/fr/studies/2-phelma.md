@@ -3,7 +3,7 @@ layout: "../../../layouts/ProjectLayout.astro"
 title: Phelma – Grenoble INP
 author: Nicolas Rabreau
 image: {
-  src: "/public/images/post-1.jpg",
+  src: "/images/post-1.jpg",
   alt: "Une photo d'un codeur",
 }
 description: Mes trois années à Phelma m’ont appris bien plus que la physique. Des laboratoires de nanofabrication à la recherche quantique, j’ai découvert comment la théorie devient technologie — et j’ai compris que je voulais contribuer à l’avenir de l’informatique quantique.

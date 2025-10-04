@@ -4,7 +4,7 @@ title: School Projects
 date: 2025-06-07
 author: Nicolas Rabreau
 image: {
-  src: "/public/images/post-1.jpg",
+  src: "/images/post-1.jpg",
   alt: "A picture of a coder",
 }
 description: A selection of small coding and simulation projects done during my studies, ranging from physics modeling to fun programming exercises.

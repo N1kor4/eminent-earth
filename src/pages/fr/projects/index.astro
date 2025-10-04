@@ -8,6 +8,7 @@ const allPosts = await Astro.glob("./*.md");
 <MainLayout title="My Blog">
   <section class="container" aria-label="New Blog Posts">
     <h1 class="h1">Curious about privacy ?</h1>
+    <h1 class="h3">Actuellement en cours de développement...</h1>
     <div class="post-grid">
       {allPosts.map((post) => (
         <PostCard
@@ -17,7 +18,6 @@ const allPosts = await Astro.glob("./*.md");
         />
       ))}
     </div>
-  </section>
 </MainLayout>
 
 <style>

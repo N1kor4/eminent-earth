@@ -4,7 +4,7 @@ title: Why Privacy Matters
 date: 2025-06-07
 author: Nicolas Rabreau
 image: {
-  src: "/public/images/post-1.jpg",
+  src: "/images/post-1.jpg",
   alt: "A picture of a coder",
 }
 description: A personal reflection on digital privacy and why it matters now more than ever

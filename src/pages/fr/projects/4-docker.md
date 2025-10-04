@@ -4,7 +4,7 @@ title: Docker & Self-Hosting
 date: 2025-06-07
 author: Nicolas Rabreau
 image: 
-  src: "/public/images/post-1.jpg"
+  src: "/images/post-1.jpg"
   alt: "A picture of a coder"
 description: Exploring Docker and self-hosting on a Raspberry Pi
 draft: false

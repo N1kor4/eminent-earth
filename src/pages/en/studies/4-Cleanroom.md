@@ -4,7 +4,7 @@ title: Nanofabrication Experience
 date: 2025-06-07
 author: Nicolas Rabreau
 image: {
-  src: "/public/images/post-1.jpg",
+  src: "/images/post-1.jpg",
   alt: "A picture of a coder",
 }
 description: I gained hands-on cleanroom experience. I have experience in optical lithography, plasma etching, deposition and device characterisation at Phelma.

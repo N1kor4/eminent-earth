@@ -4,7 +4,7 @@ title: Projets Étudiants
 date: 2025-06-07
 author: Nicolas Rabreau
 image: {
-  src: "/public/images/post-1.jpg",
+  src: "/images/post-1.jpg",
   alt: "Une photo d'un codeur",
 }
 description: Une sélection de petits projets de codage et de simulation réalisés pendant mes études, allant de la modélisation physique à des exercices de programmation ludiques.
