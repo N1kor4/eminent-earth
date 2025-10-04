@@ -42,5 +42,3 @@ This internship was a turning point for me. It combined **quantum devices, super
 
 Beyond the technical aspects, living in Neuchâtel was unforgettable — a beautiful city and a wonderful place for my first professional experience abroad.  
 
-👉 [Read my full internship report here](/path-to-report.pdf)  
-
