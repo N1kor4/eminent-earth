@@ -41,6 +41,7 @@ const nextSection = currentIndex !== -1 && currentIndex < currentList.length - 1
             <slot />
         </div>
         <div class="sidebar">
+            <hr class="section-separator mobile-only-separator" style="width: 100%;" />
             <aside>
                 {path.includes("/guide/") && (
                     <>
@@ -105,9 +106,9 @@ const nextSection = currentIndex !== -1 && currentIndex < currentList.length - 1
                         </nav>
                     </>
                 )}
-                {path.includes("/news/") && (
+                {path.includes("/news/") && news.length > 0 && (
                     <>
-                        <h3 class="h4 news-heading">{t('guide.news')}</h3>
+                        <h3 class="h4">{t('guide.news')}</h3>
                         <nav class="guide-toc" aria-label="News sections">
                             <ol>
                                 {news.map((article, index) => (

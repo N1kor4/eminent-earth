@@ -26,7 +26,7 @@ La structure de base d'un projet Astro implique :
 *   **Les Pages :** Le contenu réel, souvent écrit en Markdown.
 *   **Les Styles (CSS) :** Le code qui rend tout joli.
 
-Commencez de manière brouillonne, apprenez en faisant, et n'ayez pas peur de casser des choses localement.
+Commencez simplement, apprenez en faisant, et n'ayez pas peur de bidouiller localement.
 
 ### Déployer le site web
 

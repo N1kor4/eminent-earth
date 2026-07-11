@@ -11,7 +11,7 @@ sectionNumber: 9
 
 Cette citation est souvent utilisée pour critiquer le pouvoir grandissant de la Big Tech. La vérité est que les **GAFAM** (Google, Apple, Facebook, Amazon, Microsoft) en savent déjà plus sur vous que vous ne le pensez probablement — votre emplacement, vos centres d'intérêt, votre comportement, vos contacts. Ils offrent un confort incroyable, mais au prix de votre vie privée et de votre autonomie.
 
-Lorsque nous dépendons exclusivement de logiciels propriétaires à source fermée (closed-source) proposés par ces géants, nous cédons le contrôle. Nous ne savons pas exactement ce que fait le code en coulisses, quelles données il renvoie au vaisseau mère, ni à quel moment une fonctionnalité sur laquelle nous comptons pourrait être soudainement supprimée ou devenir payante.
+Lorsque nous dépendons exclusivement de logiciels propriétaires à source fermée (closed-source) proposés par ces géants, nous cédons le contrôle. Nous ne savons pas exactement ce que fait le code en coulisses, quelles données il renvoie à la maison mère, ni à quel moment une fonctionnalité sur laquelle nous comptons pourrait être soudainement supprimée ou devenir payante.
 
 ### Première étape importante
 

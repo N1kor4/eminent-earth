@@ -17,13 +17,13 @@ Mon parcours a commencé simplement : je voulais configurer un VPN pour streamer
 
 Ma première tentative de configuration d'un serveur a été un désastre total. J'ai suivi les tutoriels à la lettre, mais comme je ne comprenais pas complètement ce que je faisais, les choses se sont vite compliquées. Mais c'est là que la persévérance entre en jeu. **Vous allez faire des erreurs, et c'est normal. Faire des erreurs est la façon dont on apprend.**
 
-Finalement, j'ai arrêté de brancher un écran et j'ai commencé à tout gérer "sans tête" (headlessly) via SSH (Secure Shell). Utiliser la ligne de commande m'a semblé intimidant au début, mais c'est vite devenu une seconde nature.
+Finalement, j'ai arrêté de brancher un écran et j'ai commencé à tout gérer en mode "headless" (sans écran) via SSH (Secure Shell). Utiliser la ligne de commande m'a semblé intimidant au début, mais c'est vite devenu une seconde nature.
 
 > *Vous n'avez jamais utilisé la ligne de commande ? Ne vous inquiétez pas, le [SSH (Secure Shell)](https://www.ssh.com/academy/ssh) est plus simple qu'il n'y paraît.*
 
 ### Place à Docker et Portainer
 
-Le véritable tournant pour l'auto-hébergement, c'est **Docker**. Docker est un outil qui vous permet d'exécuter des applications dans des environnements isolés appelés *conteneurs*. Vous les gérez à l'aide d'un simple fichier texte (`docker-compose.yml`) qui définit ce qui s'exécute et comment.
+La véritable révolution pour l'auto-hébergement, c'est **Docker**. Docker est un outil qui vous permet d'exécuter des applications dans des environnements isolés appelés *conteneurs*. Vous les gérez à l'aide d'un simple fichier texte (`docker-compose.yml`) qui définit ce qui s'exécute et comment.
 
 > *Curieux d'en savoir plus sur les conteneurs ? La [documentation officielle de Docker](https://docs.docker.com/) est un excellent point de départ.*
 

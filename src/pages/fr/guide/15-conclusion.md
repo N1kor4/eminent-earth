@@ -7,9 +7,9 @@ sectionNumber: 15
 
 ## Reprendre le contrôle de votre vie numérique
 
-Si vous avez lu tous ces chapitres, merci. Nous avons couvert énormément de sujets, en passant par le silicium physique du matériel et les profondeurs des câbles sous-marins, à travers les complexités des smartphones et du cloud computing, jusque dans les royaumes philosophiques de l'intelligence artificielle, de la consommation des médias, et du droit humain fondamental à la vie privée.
+Si vous avez lu tous ces chapitres, merci. Nous avons couvert énormément de sujets, en partant des puces de silicium de notre matériel, jusqu'aux câbles sous-marins, en passant par les complexités des smartphones et du cloud computing, pour finalement aborder les questions philosophiques de l'intelligence artificielle, de la consommation des médias, et du droit humain fondamental à la vie privée.
 
-Il est facile de regarder l'état actuel du paysage technologique et de se sentir dépassé. Les grandes entreprises technologiques détiennent un pouvoir sans précédent, le capitalisme de surveillance est le modèle économique dominant d'Internet, et l'IA modifie rapidement la nature de la vérité et du travail. On peut avoir l'impression de n'être que des passagers dans un train qui roule beaucoup trop vite.
+Il est facile de regarder l'état actuel du paysage technologique et de se sentir dépassé. Les grandes entreprises technologiques détiennent un pouvoir sans précédent, le capitalisme de surveillance est le modèle économique dominant d'Internet, et l'IA modifie rapidement la nature de la vérité et du travail. On peut avoir l'impression de n'être que de simples passagers dans un train qui roule beaucoup trop vite.
 
 ### Le pouvoir de l'intentionnalité
 

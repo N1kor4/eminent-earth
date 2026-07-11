@@ -8,7 +8,7 @@ sectionNumber: 0
 ## Le Duo Logiciel : Sunshine et Moonlight
 
 Pour streamer vos jeux en haute qualité, on s'appuie sur une puissante combinaison open-source.
-- **[Sunshine](https://docs.lizardbyte.dev/projects/sunshine/latest/) (L'Hôte) :** Installez-le sur votre PC gamer. Il capture votre écran, votre audio et les entrées de vos manettes et les balance sur le réseau.
+- **[Sunshine](https://docs.lizardbyte.dev/projects/sunshine/latest/) (L'Hôte) :** Installez-le sur votre PC gamer. Il capture votre écran, votre audio et les entrées de vos manettes et les diffuse sur le réseau.
 - **[Moonlight](https://moonlight-stream.org/) (Le Client) :** Installez-le sur votre PC portable, tablette ou téléphone. Il reçoit le flux et renvoie les pressions de vos boutons à l'hôte.
 
 ### Configuration
@@ -23,7 +23,7 @@ Si vous avez besoin d'approfondir les réglages de bitrate et d'encodeur, [MikeT
 
 ## Les Caprices Matériels (Comment se faire avoir)
 
-J'ai plus d'un an d'expérience à gérer les trucs exacts qui vont ruiner votre setup pendant que vous êtes à des kilomètres de chez vous. Soyez attentifs.
+J'ai plus d'un an d'expérience à gérer les petits détails qui peuvent ruiner votre setup pendant que vous êtes à des kilomètres de chez vous. Soyez attentifs.
 
 ### 1. Désactiver la Mise en Veille
 Si votre PC se met en veille, l'écran s'éteint, la carte réseau s'endort, et c'est fini. Vous ne pourrez plus vous y connecter.

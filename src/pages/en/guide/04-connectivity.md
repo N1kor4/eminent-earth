@@ -4,7 +4,6 @@ title: "Connectivity"
 description: "Internet, WiFi, 4G/5G, routers — how we stay connected."
 sectionNumber: 4
 ---
----
 
 ## The Invisible Web
 

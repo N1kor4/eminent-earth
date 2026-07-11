@@ -4,7 +4,6 @@ title: "Connectivité"
 description: "Internet, WiFi, 4G/5G, routeurs — comment on reste connecté."
 sectionNumber: 4
 ---
----
 
 ## La toile invisible
 
@@ -16,7 +15,7 @@ Lorsque vous envoyez un e-mail, regardez un film en streaming ou chargez une pag
 
 Pour comprendre comment nous en sommes arrivés là, entrons dans notre cabine téléphonique bleue (les fans de Doctor Who comprendront) et remontons le temps. Le World Wide Web a été inventé en 1989 par Tim Berners-Lee, un scientifique britannique au CERN. Il voulait simplement un meilleur moyen pour les scientifiques de partager des informations. Il a créé le premier navigateur web et le premier serveur web. Ce fut le modeste début de quelque chose qui allait changer le monde.
 
-Avance rapide jusqu'à aujourd'hui, et nous sommes passés des modems lents et bruyants à d'immenses câbles à fibre optique reposant au fond des océans. Ces câbles transmettent des informations à l'aide d'impulsions lumineuses, ce qui signifie que vos données voyagent littéralement à la vitesse de la lumière ! Même l'air qui nous entoure est rempli de signaux invisibles, du Wi-Fi aux antennes 5G ultra-rapides.
+De nos jours, nous sommes passés des modems lents et bruyants à d'immenses câbles à fibre optique reposant au fond des océans. Ces câbles transmettent des informations à l'aide d'impulsions lumineuses, ce qui signifie que vos données voyagent littéralement à la vitesse de la lumière ! Même l'air qui nous entoure est rempli de signaux invisibles, du Wi-Fi aux antennes 5G ultra-rapides.
 
 ### Comment les données voyagent réellement
 
@@ -32,7 +31,7 @@ Votre FAI achemine ensuite cette requête via d'énormes hubs nationaux. Si le s
 </div>
 </details>
 
-Ces câbles sous-marins sont les véritables artères d'Internet. Ils sont étonnamment vulnérables ; occasionnellement, un requin essaiera d'en mordre un, ou une ancre coupera accidentellement une connexion !
+Ces câbles sous-marins sont les véritables artères d'Internet. Ils sont étonnamment vulnérables ; il arrive parfois qu'un requin essaie d'en mordre un, ou qu'une ancre de bateau coupe accidentellement une connexion !
 
 ### L'illusion du sans-fil
 

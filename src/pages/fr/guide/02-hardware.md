@@ -38,7 +38,7 @@ Comprendre ces bases ne vous aidera pas seulement à faire de meilleurs choix lo
 
 ### Les Ordinateurs Portables
 
-Les ordinateurs portables ont introduit une nouvelle utilité : la mobilité. Le but était de tout minimiser. Si les premiers portables offraient une certaine flexibilité, les modèles modernes sont presque entièrement verrouillés, ce qui rend impossible la mise à niveau de pièces individuelles. Cependant, des marques comme [Framework](https://frame.work/) ripostent en construisant des ordinateurs portables entièrement modulaires et réparables.
+Les ordinateurs portables ont introduit une nouvelle utilité : la mobilité. Le but était de tout minimiser. Si les premiers portables offraient une certaine flexibilité, les modèles modernes sont presque entièrement verrouillés, ce qui rend impossible la mise à niveau de pièces individuelles. Cependant, des marques comme [Framework](https://frame.work/) s'y opposent en proposant des ordinateurs portables entièrement modulaires et réparables.
 
 ### Des ordinateurs plus petits : Raspberry Pi & Arduino
 
@@ -57,7 +57,7 @@ Le matériel n'est pas seulement une question de vitesse et de performance. C'es
 
 L'une des conversations les plus importantes dans le monde de la technologie aujourd'hui est le droit à la réparation. Pendant des années, les entreprises technologiques ont conçu leurs produits de manière à ce qu'il soit difficile, voire impossible, pour les utilisateurs de les réparer eux-mêmes. Les batteries collées, les vis propriétaires et les verrous logiciels sont devenus la norme.
 
-Cette tendance à l'obsolescence programmée — la conception de produits destinés à tomber en panne ou à devenir rapidement obsolètes — nous oblige à acheter de nouveaux appareils plus souvent que nécessaire. C'est mauvais pour notre portefeuille, et c'est dévastateur pour l'environnement. Les déchets électroniques sont l'un des flux de déchets qui croissent le plus rapidement sur la planète.
+Cette tendance à l'obsolescence programmée — la conception de produits destinés à tomber en panne ou à devenir rapidement obsolètes — nous oblige à acheter de nouveaux appareils plus souvent que nécessaire. C'est mauvais pour notre portefeuille, et c'est dévastateur pour l'environnement. Les déchets électroniques représentent l'une des sources de pollution qui augmente le plus rapidement à l'échelle mondiale.
 
 Veuillez noter que, pour des raisons de sécurité, il n'est pas conseillé de conserver des appareils qui ne sont plus mis à jour.
 

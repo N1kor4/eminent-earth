@@ -9,13 +9,13 @@ sectionNumber: 6
 
 Aujourd'hui, nous ne connectons plus seulement les ordinateurs et les téléphones à Internet ; nous connectons *tout*. Le concept de l'Internet des Objets (IoT) a rapidement envahi notre quotidien. Des thermostats et réfrigérateurs intelligents aux téléviseurs connectés, et même aux brosses à dents intelligentes qui envoient des données sur nos habitudes de brossage, le monde physique se met de plus en plus en ligne.
 
-### La domotique partout
+### L'omniprésence de la domotique
 
 Les applications de maison intelligente vous permettent de tout contrôler depuis un seul centre : les caméras, les volets, les portes de garage et l'éclairage.
 
-Cependant, avoir plus d'appareils connectés peut parfois signifier *moins* de sécurité physique en cas d'urgence. Par exemple, certaines régions interdisaient auparavant les volets électriques dans les zones inondables car si le courant est coupé, il devient impossible de s'échapper rapidement de la maison. Lors de la conception d'une maison intelligente, vous devez toujours prévoir des mécanismes de sécurité physiques (fail-safes).
+Cependant, avoir plus d'appareils connectés peut parfois signifier *moins* de sécurité physique en cas d'urgence. Par exemple, certaines régions interdisaient auparavant les volets électriques dans les zones inondables car si le courant est coupé, il devient impossible de s'échapper rapidement de la maison. Lors de la conception d'une maison intelligente, vous devez toujours prévoir des systèmes de secours manuels (fail-safes).
 
-D'un autre côté, ces systèmes offrent une incroyable tranquillité d'esprit. Vous pouvez vérifier les caméras de votre maison de n'importe où, surveiller la livraison de vos colis, ou simplement vous assurer que le chien ne retourne pas le jardin. Ce type de surveillance a permis de résoudre d'innombrables cas de vol et est souvent crucial pour la sécurité domestique moderne. Cependant, il existe de nombreuses façons de se protéger, et il est important de comprendre les implications techniques et légales de l'enregistrement de votre environnement.
+D'un autre côté, ces systèmes offrent une incroyable tranquillité d'esprit. Vous pouvez vérifier les caméras de votre maison de n'importe où, surveiller la livraison de vos colis, ou simplement vous assurer que votre chien ne saccage pas le jardin. Ce type de surveillance a permis de résoudre d'innombrables cas de vol et est souvent crucial pour la sécurité domestique moderne. Cependant, il existe de nombreuses façons de se protéger, et il est important de comprendre les implications techniques et légales de l'enregistrement de votre environnement.
 
 ### Le confort à quel prix ?
 

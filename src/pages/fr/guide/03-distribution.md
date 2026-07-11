@@ -15,7 +15,7 @@ L'OS est le logiciel fondamental qui gère le matériel et vous permet d'exécut
 
 Pendant des décennies, Microsoft Windows a été la force dominante dans le monde des ordinateurs de bureau. Il est devenu le système d'exploitation par défaut dans les années 90, en grande partie grâce à la stratégie de Microsoft de s'associer aux fabricants de matériel (comme Dell, HP et Lenovo) pour que Windows soit préinstallé sur presque chaque nouveau PC.
 
-**Les avantages :** Il possède une immense compatibilité logicielle. Presque tous les jeux et logiciels commerciaux sont d'abord développés pour Windows.
+**Les avantages :** Il offre une immense compatibilité logicielle. Presque tous les jeux et logiciels commerciaux sont d'abord développés pour Windows.
 **Les inconvénients :** Windows est un écosystème fermé. Il est devenu de plus en plus lourd, forçant souvent les utilisateurs à créer des comptes Microsoft, collectant d'énormes quantités de données de télémétrie (statistiques d'utilisation), et intégrant même des publicités directement dans le système d'exploitation.
 
 ### macOS : Le jardin clos
@@ -32,7 +32,7 @@ Ce qui nous amène à Linux. Contrairement à Windows ou macOS, Linux n'appartie
 Parce qu'il est open-source, n'importe qui peut prendre le noyau Linux, y ajouter des logiciels et créer son propre système d'exploitation complet. Ces différentes versions de Linux sont appelées des **distributions** (ou "distros"). Parmi les plus populaires, on trouve Ubuntu, Fedora, Linux Mint et Debian.
 
 **Les avantages :** Linux est fondamentalement une question de liberté. Il est gratuit, très sécurisé, incroyablement personnalisable et respecte votre vie privée par défaut. Il ne vous force pas à faire des mises à jour ni à voir des publicités. Bien qu'il ne détienne qu'un faible pourcentage du marché des ordinateurs de bureau, il domine totalement le monde des serveurs — la majeure partie d'Internet (et des téléphones Android) fonctionne sous Linux !
-**Les inconvénients :** Cela peut nécessiter un peu plus de volonté technique pour apprendre. Certains logiciels commerciaux spécialisés (comme la suite Adobe) ou certains systèmes anti-triche dans les jeux vidéo ne fonctionnent pas nativement sous Linux.
+**Les inconvénients :** Son apprentissage peut demander un peu plus d'efforts ou de curiosité technique. Certains logiciels commerciaux spécialisés (comme la suite Adobe) ou certains systèmes anti-triche dans les jeux vidéo ne fonctionnent pas nativement sous Linux.
 
 ### Pourquoi c'est important
 

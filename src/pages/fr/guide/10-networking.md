@@ -43,6 +43,6 @@ Si vous faites tourner un serveur comme un Raspberry Pi, vous ouvrez une porte s
 
 1.  **UFW (Uncomplicated Firewall) :** Bloque le trafic réseau indésirable. N'ouvrez que les ports dont vous avez absolument besoin (comme le SSH ou le trafic web).
 2.  **Fail2Ban :** Cet outil surveille les tentatives de connexion et bloque automatiquement les adresses IP qui échouent trop de fois (ce qui arrête les attaques par force brute).
-3.  **Bonnes pratiques SSH :** N'utilisez jamais de mots de passe pour le SSH. Utilisez plutôt des clés cryptographiques, et envisagez de changer le port SSH par défaut (22) pour autre chose afin d'éviter les bots automatisés.
+3.  **Bonnes pratiques SSH :** N'utilisez jamais de mots de passe pour le SSH. Utilisez plutôt des clés cryptographiques, et envisagez de changer le port SSH par défaut (22) par un autre port afin d'éviter les bots automatisés.
 
 La sécurité ne consiste pas à être paranoïaque ; il s'agit d'avoir le contrôle. Vous n'avez pas besoin d'être parfait, il vous suffit d'être meilleur que l'utilisateur moyen pour dissuader la plupart des attaquants.

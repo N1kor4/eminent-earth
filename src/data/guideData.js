@@ -54,7 +54,7 @@ const guideData = {
       { slug: "News-3-City-surveillance",    title: "City Surveillance",     description: "Increasing cameras and surveillance in modern cities." }
     ],
     fr: [
-      { slug: "News-1-chat-control",         title: "Contrôle des chats",    description: "L'UE veut instaurer le contrôle des conversations." },
+      { slug: "News-1-chat-control",         title: "Surveillance des messageries",    description: "L'UE veut instaurer le contrôle des conversations." },
       { slug: "News-2-ID-online",            title: "Identité en ligne",     description: "La poussée vers l'identité numérique en ligne." },
       { slug: "News-3-City-surveillance",    title: "Surveillance urbaine",  description: "Augmentation des caméras et de la surveillance dans les villes modernes." }
     ]

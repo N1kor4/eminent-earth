@@ -15,21 +15,28 @@ const navItems = navData[lang];
     <a href="/" class="logomark" aria-label="Go home" style="color: hsl(var(--accent));">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
     </a>
-    <ul>
-      {navItems.map((item) => (
-        <Link 
-          text={item.name}
-          href={item.path}
-          style="primary"
-          isFilled={false}
-        />
-      ))}
+    <button id="menu-btn" class="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <div id="nav-links" class="nav-links">
+      <ul>
+        {navItems.map((item) => (
+          <li>
+            <Link 
+              text={item.name}
+              href={item.path}
+              style="primary"
+              isFilled={false}
+            />
+          </li>
+        ))}
 
-      <!-- Language switcher -->
-      <li>
-        <LangSwitcher />
-      </li>
-    </ul>
+        <!-- Language switcher -->
+        <li>
+          <LangSwitcher />
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
@@ -38,7 +45,7 @@ const navItems = navData[lang];
 </script>
 
 <style>
-.navbar ul {
+.nav-links ul {
   display: flex;
   align-items: center; /* centers both text links and flag */
   gap: 1rem;
