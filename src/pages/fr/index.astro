@@ -1,38 +1,66 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import Timeline from "../../components/Timeline.astro";
-
-const allStudies = import.meta.glob("./studies/*.md", { eager: true });
-
-const studies = Object.values(allStudies).map((study: any) => ({
-  title: study.frontmatter.title,
-  description: study.frontmatter.description,
-  url: study.url
-}));
+import StudyCard from "../../components/StudyCard.astro";
 ---
 
-<MainLayout title="My Portfolio" description="Welcome to my portfolio page. Here you can find my projects and skills.">
+<MainLayout title="Digital Awareness" description="Bienvenue sur mon site. Un guide pour comprendre notre monde numérique.">
 
   <!-- Hero section -->
   <section class="hero">
-    <img src="../../nicolasrabreau.jpeg" alt="Picture of Nicolas" class="profile-pic" />
-    <div class="hero-text">
-      <h1>Salut et bienvenue sur mon site internet !</h1>
-      <p>Je m'appelle Nicolas, je suis étudiant ingénieur à Phelma, passionné par les technologies quantiques, de vie privée, mais aussi de sport.</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/nicolas-rabreau/">LinkedIn</a>
-        <a href="https://github.com/N1kor4">GitHub</a>
-        <a href="/about">Contact</a>
+    <div class="hero-top">
+      <img src="../../nicolasrabreau.jpeg" alt="Photo de Nicolas" class="profile-pic" />
+      <div class="hero-text-top">
+        <h1>Salut et bienvenue sur mon site !</h1>
+        <p>Je m'appelle Nicolas, doctorant passionné par les technologies quantiques et la liberté numérique.</p>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <p class="awareness-pitch">
+        Avec les menaces actuelles sur la vie privée et la manipulation de l'information, il est plus important que jamais de comprendre l'environnement numérique qui nous entoure — du matériel aux logiciels, sans oublier la philosophie des entreprises qui les conçoivent.
+      </p>
+      <div class="hero-actions">
+        <a href="/fr/guide/" class="btn-primary">Lire le Guide →</a>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/nicolas-rabreau/">LinkedIn</a>
+          <a href="https://github.com/N1kor4">GitHub</a>
+        </div>
       </div>
     </div>
   </section>
 
   <hr class="section-separator"/>
 
-  <!-- Studies timeline -->
-  <section>
+  <!-- Studies grid -->
+  <section class="container">
     <h2 class="h2">Mon parcours académique</h2>
-    <Timeline items={studies} orientation="vertical"/>
+    <div class="studies-grid">
+      <StudyCard
+        title="Classes Préparatoires (CPGE)"
+        items={[
+          { subtitle: "Lycée Chateaubriand, Rennes — PC (Physique-Chimie)", period: "2021 – 2023" }
+        ]}
+      />
+      <StudyCard
+        title="Diplôme d'Ingénieur & Master"
+        items={[
+          { subtitle: "Grenoble INP - Phelma — Physique, Nanosciences & Microélectronique", period: "2023 – 2026" },
+          { subtitle: "Université Grenoble Alpes — Master QIQE (Quantum Information & Quantum Engineering)", period: "2025 – 2026" }
+        ]}
+      />
+      <StudyCard
+        title="Stages"
+        items={[
+          { subtitle: "EPFL Neuchâtel — Détecteurs supraconducteurs & circuits RSFQ", period: "2025" },
+          { subtitle: "CNRS Grenoble — Informatique quantique avec qubits supraconducteurs", period: "2026" }
+        ]}
+      />
+      <StudyCard
+        title="Doctorat (PhD)"
+        items={[
+          { subtitle: "En collaboration avec le CNRS Grenoble & Silent Waves — Études sur les TWPA (Amplificateurs Paramétriques à Ondes Progressives)", period: "2026 – Présent" }
+        ]}
+      />
+    </div>
   </section>
 
   <hr class="section-separator" />
@@ -42,39 +70,101 @@ const studies = Object.values(allStudies).map((study: any) => ({
 <style>
 .hero {
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 3rem auto 1rem auto;
-  padding: 0 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 1000px;
+  margin: var(--space-xl) auto var(--space-md) auto;
+  padding: 0 var(--space-md);
   text-align: left;
 }
 
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.hero-bottom {
+  width: 100%;
+}
+
 .profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  box-shadow: var(--shadow-md);
 }
 
-.hero-text {
+@media (max-width: 600px) {
+  .hero {
+    justify-content: center;
+    text-align: center;
+  }
+  .profile-pic {
+    max-width: 150px;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+.hero-text-top {
   flex: 1;
   min-width: 280px;
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.awareness-pitch {
+  font-size: var(--fs-md);
+  color: hsl(var(--txt) / 0.85);
+  margin-block: var(--space-xs);
+  border-left: 3px solid hsl(var(--accent));
+  padding-left: var(--space-sm);
+  background: hsl(var(--accent) / 0.05);
+  padding-block: var(--space-xs);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--muted));
+  padding: 0.5em 1em;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--_tspeed_fast) var(--_ttiming_ease),
+              transform var(--_tspeed_fast) var(--_ttiming_ease);
+}
+
+.btn-primary:hover {
+  background-color: hsl(var(--accent) / 0.8);
+  color: hsl(var(--muted));
+  transform: translateY(-2px);
 }
 
 .social-links {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  border-top: 1px solid #ddd;
-  padding-top: 1rem;
+  gap: 1rem;
 }
 
 .social-links a {
-  color: #007acc;
+  color: hsl(var(--accent));
   text-decoration: none;
   font-weight: 600;
 }
@@ -83,13 +173,16 @@ const studies = Object.values(allStudies).map((study: any) => ({
   text-decoration: underline;
 }
 
-/* Barre séparatrice entre sections */
-.section-separator {
-  border: none;
-  height: 6px;
-  background-color: #ddd;
-  max-width: 900px;
-  margin: 3rem auto;
-  border-radius: 3px;
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.studies-grid {
+  display: grid;
+  gap: var(--space-md);
+  margin-block: var(--space-lg);
+  grid-template-columns: 1fr;
 }
 </style>

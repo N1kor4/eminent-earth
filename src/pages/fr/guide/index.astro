@@ -1,0 +1,113 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import SectionCard from "../../../components/SectionCard.astro";
+import guideData from "../../../data/guideData.js";
+
+const sections = guideData.fr;
+const extras = guideData.extras.fr;
+---
+
+<MainLayout title="Le Guide — Comprendre notre monde numérique" description="Un guide pas à pas pour comprendre le hardware, le software, la vie privée, l'IA et le monde numérique qui nous entoure.">
+  <section class="container guide-hub">
+    <div class="guide-hero">
+      <h1 class="h1">Le <span>Guide</span></h1>
+      <p class="guide-subtitle">
+        Un voyage pas à pas à travers le monde numérique — du hardware au software, de la vie privée à l'IA.
+        Comprenez les outils que vous utilisez chaque jour, et reprenez le contrôle.
+      </p>
+    </div>
+
+    <div class="phase-section">
+      <h2 class="h2 phase-heading">Phase 1 : Les Fondations Physiques</h2>
+      <div class="guide-grid">
+        {sections.slice(0, 7).map((section) => (
+          <SectionCard
+            number={section.number}
+            title={section.title}
+            description={section.description}
+            href={`/fr/guide/${section.slug}`}
+          />
+        ))}
+      </div>
+    </div>
+
+    <div class="phase-section">
+      <h2 class="h2 phase-heading">Phase 2 : La Lutte pour le Contrôle Numérique</h2>
+      <div class="guide-grid">
+        {sections.slice(7, 11).map((section) => (
+          <SectionCard
+            number={section.number}
+            title={section.title}
+            description={section.description}
+            href={`/fr/guide/${section.slug}`}
+          />
+        ))}
+      </div>
+    </div>
+
+    <div class="phase-section">
+      <h2 class="h2 phase-heading">Phase 3 : L'Ère Moderne de l'Information</h2>
+      <div class="guide-grid">
+        {sections.slice(11, 15).map((section) => (
+          <SectionCard
+            number={section.number}
+            title={section.title}
+            description={section.description}
+            href={`/fr/guide/${section.slug}`}
+          />
+        ))}
+      </div>
+    </div>
+
+  </section>
+</MainLayout>
+
+<style>
+.guide-hub {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.guide-hero {
+  text-align: center;
+  margin-block: var(--space-xl) var(--space-lg);
+}
+
+.guide-hero .h1 {
+  margin-inline: auto;
+}
+
+.guide-subtitle {
+  max-width: 55ch;
+  margin-inline: auto;
+  margin-top: var(--space-sm);
+  color: hsl(var(--txt) / 0.75);
+}
+
+.phase-section {
+  margin-bottom: var(--space-xl);
+}
+
+.phase-heading {
+  margin-bottom: var(--space-sm);
+  color: hsl(var(--txt));
+  border-bottom: 1px solid hsl(var(--txt) / 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.guide-grid {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.extras-title {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid hsl(var(--txt) / 0.1);
+}
+
+.extras-subtitle {
+  color: hsl(var(--txt) / 0.65);
+  margin-bottom: var(--space-md);
+}
+</style>

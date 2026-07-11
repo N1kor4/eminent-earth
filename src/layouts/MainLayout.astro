@@ -7,14 +7,17 @@ import Nav from '../components/Nav.astro';
 // style import
 import '../styles/global.css';
 
-
 const {
 	title = "Default Title",
 	description = "Default description for the page."
 } = Astro.props;
+
+// Detect language from URL path
+const path = Astro.url.pathname;
+const lang = path.startsWith("/fr/") ? "fr" : "en";
 ---
 
-<html lang="en">
+<html lang={lang}>
 	<MainHead {title} {description} />
 	<body>
 		<Nav />

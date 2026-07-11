@@ -1,0 +1,58 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import SectionCard from "../../../components/SectionCard.astro";
+import guideData from "../../../data/guideData.js";
+
+const extras = guideData.extras.en;
+---
+
+<MainLayout title="Extras" description="Extra guides and appendices.">
+    <section class="container guide-hub">
+        <div class="guide-hero">
+            <h1 class="h1">The <span>Extras</span></h1>
+            <p class="guide-subtitle">
+                These extra guides are deep-dives or side projects. I take it as an acquired assumption that you already have the foundational knowledge provided in the primary Guide. Dive in if you want to go further!
+            </p>
+        </div>
+
+        <div class="guide-grid">
+            {extras.map((extra, index) => (
+                <SectionCard 
+                    number={`${index + 1}+`}
+                    title={extra.title} 
+                    description={extra.description} 
+                    link={`/en/extras/${extra.slug}`} 
+                />
+            ))}
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+.guide-hub {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.guide-hero {
+  text-align: center;
+  margin-block: var(--space-xl) var(--space-lg);
+}
+
+.guide-hero .h1 {
+  margin-inline: auto;
+}
+
+.guide-subtitle {
+  max-width: 55ch;
+  margin-inline: auto;
+  margin-top: var(--space-sm);
+  color: hsl(var(--txt) / 0.75);
+}
+
+.guide-grid {
+  display: grid;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+</style>

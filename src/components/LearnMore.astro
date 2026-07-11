@@ -1,0 +1,49 @@
+---
+// LearnMore.astro
+const { title = "Learn More..." } = Astro.props;
+---
+
+<details class="learn-more">
+    <summary class="learn-more-summary">{title}</summary>
+    <div class="learn-more-content">
+        <slot />
+    </div>
+</details>
+
+<style>
+.learn-more {
+    margin: var(--space-md) 0;
+    background-color: hsl(var(--muted));
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.learn-more-summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-md);
+    background-color: hsl(var(--accent) / 0.1);
+    color: hsl(var(--accent));
+    transition: background-color var(--_tspeed_fast) var(--_ttiming_ease);
+    user-select: none;
+    list-style-position: inside;
+}
+
+.learn-more-summary:hover {
+    background-color: hsl(var(--accent) / 0.2);
+}
+
+.learn-more-content {
+    padding: var(--space-sm) var(--space-md);
+    border-top: 1px solid hsl(var(--border));
+}
+
+.learn-more-content :global(p) {
+    margin-bottom: var(--space-sm);
+}
+
+.learn-more-content :global(p:last-child) {
+    margin-bottom: 0;
+}
+</style>

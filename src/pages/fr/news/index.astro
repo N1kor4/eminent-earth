@@ -1,0 +1,58 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import SectionCard from "../../../components/SectionCard.astro";
+import guideData from "../../../data/guideData.js";
+
+const news = guideData.news.fr;
+---
+
+<MainLayout title="Actualités" description="Mes réflexions sur l'actualité tech.">
+    <section class="container guide-hub">
+        <div class="guide-hero">
+            <h1 class="h1">Les <span>Actualités</span></h1>
+            <p class="guide-subtitle">
+                Cette section est l'endroit où je suis les changements majeurs concernant la vie privée et la tech. Veuillez noter que la couverture de l'actualité ici représente également mon point de vue personnel sur l'état actuel du monde numérique.
+            </p>
+        </div>
+
+        <div class="guide-grid">
+            {news.map((item, index) => (
+                <SectionCard 
+                    number={`${index + 1}N`}
+                    title={item.title} 
+                    description={item.description} 
+                    link={`/fr/news/${item.slug}`} 
+                />
+            ))}
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+.guide-hub {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.guide-hero {
+  text-align: center;
+  margin-block: var(--space-xl) var(--space-lg);
+}
+
+.guide-hero .h1 {
+  margin-inline: auto;
+}
+
+.guide-subtitle {
+  max-width: 55ch;
+  margin-inline: auto;
+  margin-top: var(--space-sm);
+  color: hsl(var(--txt) / 0.75);
+}
+
+.guide-grid {
+  display: grid;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+</style>

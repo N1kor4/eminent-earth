@@ -1,0 +1,262 @@
+---
+// GuideLayout.astro — Layout for guide articles with prev/next navigation
+import MainLayout from './MainLayout.astro';
+import PostHeader from '../components/PostHeader.astro';
+import guideData from '../data/guideData.js';
+import { useTranslations } from '../js/i18n.js';
+
+const { frontmatter } = Astro.props;
+const { title, description, sectionNumber } = frontmatter;
+
+// Detect language from URL
+const path = Astro.url.pathname;
+const lang = path.startsWith("/fr/") ? "fr" : "en";
+const t = useTranslations(lang);
+
+const sections = guideData[lang];
+const extras = guideData.extras[lang];
+const news = guideData.news[lang] || [];
+
+let currentList = sections;
+let basePath = `/${lang}/guide`;
+
+if (path.includes("/extras/")) {
+    currentList = extras;
+    basePath = `/${lang}/extras`;
+} else if (path.includes("/news/")) {
+    currentList = news;
+    basePath = `/${lang}/news`;
+}
+
+// Find current, prev, next sections
+const currentIndex = currentList.findIndex(s => path.includes(s.slug));
+const prevSection = currentIndex > 0 ? currentList[currentIndex - 1] : null;
+const nextSection = currentIndex !== -1 && currentIndex < currentList.length - 1 ? currentList[currentIndex + 1] : null;
+---
+
+<MainLayout title={title} description={description}>
+    <PostHeader title={title} />
+    <div class="post-content">
+        <div class="content">
+            <slot />
+        </div>
+        <div class="sidebar">
+            <aside>
+                {path.includes("/guide/") && (
+                    <>
+                        <h3 class="h4">{t('guide.sections')}</h3>
+                        <nav class="guide-toc" aria-label="Guide sections">
+                            <div class="phase-group">
+                                <h4 class="phase-title">{t('phase.1')}</h4>
+                                <ol>
+                                    {sections.slice(0, 7).map((section) => (
+                                        <li class:list={[{ active: section.number === sectionNumber }]}>
+                                            <a href={`${basePath}/${section.slug}`}>
+                                                <span class="toc-number">{String(section.number).padStart(2, '0')}</span>
+                                                <span>{section.title}</span>
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ol>
+                            </div>
+                            <div class="phase-group">
+                                <h4 class="phase-title">{t('phase.2')}</h4>
+                                <ol>
+                                    {sections.slice(7, 11).map((section) => (
+                                        <li class:list={[{ active: section.number === sectionNumber }]}>
+                                            <a href={`${basePath}/${section.slug}`}>
+                                                <span class="toc-number">{String(section.number).padStart(2, '0')}</span>
+                                                <span>{section.title}</span>
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ol>
+                            </div>
+                            <div class="phase-group">
+                                <h4 class="phase-title">{t('phase.3')}</h4>
+                                <ol>
+                                    {sections.slice(11, 15).map((section) => (
+                                        <li class:list={[{ active: section.number === sectionNumber }]}>
+                                            <a href={`${basePath}/${section.slug}`}>
+                                                <span class="toc-number">{String(section.number).padStart(2, '0')}</span>
+                                                <span>{section.title}</span>
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ol>
+                            </div>
+                        </nav>
+                    </>
+                )}
+                {path.includes("/extras/") && extras.length > 0 && (
+                    <>
+                        <h3 class="h4 extras-heading">{t('guide.extras')}</h3>
+                        <nav class="guide-toc" aria-label="Extra sections">
+                            <ol>
+                                {extras.map((extra, index) => (
+                                    <li class:list={[{ active: path.includes(extra.slug) }]}>
+                                        <a href={`/${lang}/extras/${extra.slug}`}>
+                                            <span class="toc-number">{index + 1}+</span>
+                                            <span>{extra.title}</span>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ol>
+                        </nav>
+                    </>
+                )}
+                {path.includes("/news/") && (
+                    <>
+                        <h3 class="h4 news-heading">{t('guide.news')}</h3>
+                        <nav class="guide-toc" aria-label="News sections">
+                            <ol>
+                                {news.map((article, index) => (
+                                    <li class:list={[{ active: path.includes(article.slug) }]}>
+                                        <a href={`/${lang}/news/${article.slug}`}>
+                                            <span class="toc-number">{index + 1}N</span>
+                                            <span>{article.title}</span>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ol>
+                        </nav>
+                    </>
+                )}
+            </aside>
+        </div>
+    </div>
+
+    <!-- Prev / Next navigation (only for main guide sections) -->
+    <!-- Prev / Next navigation -->
+    {(prevSection || nextSection) && (
+        <>
+            <hr class="section-separator" style="margin-top: 0; max-width: 800px; margin-inline: auto;" />
+            <nav class="guide-nav" aria-label="Guide navigation">
+                <div class="guide-nav-inner">
+                    {prevSection ? (
+                        <a href={`${basePath}/${prevSection.slug}`} class="guide-nav-link prev">
+                            <small>← {t('nav.prev')}</small>
+                            <span>{prevSection.title}</span>
+                        </a>
+                    ) : <div />}
+                    {nextSection ? (
+                        <a href={`${basePath}/${nextSection.slug}`} class="guide-nav-link next">
+                            <small>{t('nav.next')} →</small>
+                            <span>{nextSection.title}</span>
+                        </a>
+                    ) : <div />}
+                </div>
+            </nav>
+        </>
+    )}
+</MainLayout>
+
+<style>
+/* Guide Table of Contents in sidebar */
+.phase-group {
+    margin-bottom: var(--space-md);
+}
+
+.phase-title {
+    font-size: var(--fs-sm);
+    font-weight: bold;
+    color: hsl(var(--txt) / 0.6);
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.guide-toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 2px;
+}
+
+.guide-toc li a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+    padding: 0.35em 0.5em;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-1-4);
+    transition: background-color var(--transition-ease-fast);
+}
+
+.guide-toc li a:hover {
+    background-color: hsl(var(--accent) / 0.1);
+}
+
+.guide-toc li.active a {
+    background-color: hsl(var(--accent) / 0.15);
+    color: hsl(var(--accent));
+    font-weight: 700;
+}
+
+.toc-number {
+    color: hsl(var(--accent));
+    font-weight: 700;
+    font-size: 0.75em;
+    min-width: 1.8em;
+}
+
+.extras-heading {
+    margin-top: var(--space-md);
+    padding-top: var(--space-sm);
+}
+
+/* Prev / Next navigation */
+.guide-nav {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: var(--space-md);
+    padding-block-start: 0;
+}
+
+.guide-nav-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.guide-nav-link {
+    display: grid;
+    gap: 0.25em;
+    padding: var(--space-sm) var(--space-md);
+    background-color: hsl(var(--muted));
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--transition-ease-fast),
+        box-shadow var(--transition-ease-fast);
+}
+
+.guide-nav-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.guide-nav-link small {
+    font-size: var(--fs-sm);
+    color: hsl(var(--accent));
+}
+
+.guide-nav-link span {
+    font-weight: 700;
+    font-size: var(--fs-md);
+}
+
+.guide-nav-link.next {
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .guide-nav-inner {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

@@ -1,0 +1,76 @@
+---
+// SectionCard.astro — Card component for the guide hub page
+const { number, title, description, href, link } = Astro.props;
+const targetHref = href || link;
+const formattedNumber = (typeof number === 'number' || (typeof number === 'string' && !isNaN(number))) 
+    ? String(number).padStart(2, '0') 
+    : number;
+---
+
+<a href={targetHref} class="section-card" id={formattedNumber ? `section-${formattedNumber}` : null}>
+    {formattedNumber && <div class="section-card-number">{formattedNumber}</div>}
+    <div class="section-card-content">
+        <h3>{title}</h3>
+        <p>{description}</p>
+    </div>
+    <span class="section-card-arrow" aria-hidden="true">→</span>
+</a>
+
+<style>
+.section-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background-color: hsl(var(--muted));
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    transition:
+        transform var(--transition-ease-fast),
+        box-shadow var(--transition-ease-fast),
+        background-color var(--transition-ease-fast);
+    border-left: 4px solid hsl(var(--accent) / 0.3);
+}
+
+.section-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-left-color: hsl(var(--accent));
+}
+
+.section-card-number {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: hsl(var(--accent));
+    line-height: 1;
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.section-card-content h3 {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    margin-bottom: 0.25em;
+    color: hsl(var(--txt));
+}
+
+.section-card-content p {
+    font-size: var(--fs-sm);
+    color: hsl(var(--txt) / 0.7);
+    margin: 0;
+    max-width: none;
+}
+
+.section-card-arrow {
+    font-size: var(--fs-lg);
+    color: hsl(var(--accent) / 0.5);
+    transition: transform var(--transition-squish-fast), color var(--transition-ease-fast);
+}
+
+.section-card:hover .section-card-arrow {
+    transform: translateX(4px);
+    color: hsl(var(--accent));
+}
+</style>

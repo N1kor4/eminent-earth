@@ -1,29 +1,46 @@
 ---
-//components imports
 import Link from "../components/Link.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout title="Page not found">
+<MainLayout title="Page not found / Page introuvable">
     <div class="container" style={{
         display: 'grid',
         placeItems: 'center',
         textAlign: 'center',
-        gap: 'vra(--space-sm)',
+        gap: 'var(--space-md)',
+        marginTop: 'var(--space-2xl)'
     }}>
     
-    <div class="div">
-        <h1 class="h1"> 404 - Page Not Found </h1>
-        <p>Sorry, the page you are looking for does not exist.</p>
-        <Link 
-        href="/" 
-        text="Go back to home" 
-        style="secondary" 
-        icon={{
-            name: "logomark",
-            side: "right",
-        }}
-        />
-    <div>
+        <div id="404-content">
+            <h1 class="h1"> 404 </h1>
+            <h2 class="h2" id="404-title">Page Not Found</h2>
+            <p id="404-desc" style={{ marginBottom: 'var(--space-md)' }}>Sorry, the page you are looking for does not exist or has been moved.</p>
+            
+            <Link 
+                id="404-link"
+                href="/" 
+                text="Go back home" 
+                style="secondary" 
+                icon={{
+                    name: "logomark",
+                    side: "right",
+                }}
+            />
+        </div>
     </div>
+
+    <script is:inline>
+        (function() {
+            const isFrench = navigator.language.startsWith("fr") || window.location.pathname.startsWith('/fr/');
+            if (isFrench) {
+                document.getElementById('404-title').innerText = "Page Introuvable";
+                document.getElementById('404-desc').innerText = "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.";
+                document.querySelector('#404-link span:last-child').innerText = "Retour à l'accueil";
+                document.getElementById('404-link').href = "/fr/";
+            } else {
+                document.getElementById('404-link').href = "/en/";
+            }
+        })();
+    </script>
 </MainLayout>

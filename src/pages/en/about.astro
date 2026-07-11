@@ -1,29 +1,29 @@
 ---
-//components imports
 import Link from "../../components/Link.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 ---
 
-<MainLayout title="About" description="My about page">
-    <section class="Container about" aria-label="About Me">
+<MainLayout title="About Me" description="About Nicolas and the purpose of this site.">
+    <section class="container about" aria-label="About Me">
         <img 
             src="/nicolasrabreau.jpeg" 
             alt="My headshot" 
-            width="200" 
-            height="200" 
         />
-    
-    
         <div class="content">
-            <h1 class="h1"> About me </h1>
+            <h1 class="h1">About me</h1>
             <p>
-            Hello! I'm a microelectronics and quantum physics engineer with a strong interest in modern technologies, privacy, and low-level systems. I enjoy diving deep into technical challenges and constantly strive to expand my knowledge.
+                Hello! I'm a PhD student researching quantum technologies, with a strong interest in modern tech, privacy, and low-level systems. I enjoy diving deep into technical challenges and constantly strive to expand my knowledge.
             </p>
+            <p>
+                I built this website not just as a portfolio, but to ring a bell about people losing control of the tools they use every day. Privacy isn't just about hiding—it's about having control and freedom. My goal with the <strong>Digital Awareness Guide</strong> is to help others understand the environment that surrounds us, from the hardware we buy to the software we run, and the philosophies of the tech companies shaping our future.
+            </p>
+            <div style="margin-top: var(--space-sm);">
+                <Link
+                    href="mailto:nicolas.rabreau@grenoble-inp.org"
+                    style="secondary"
+                    text="Contact me"
+                />
+            </div>
         </div>
-        <Link
-            href="mailto:nicolas.rabreau@grenoble-inp.org"
-            style="secondary"
-            text="Contact me"
-            />
     </section>
 </MainLayout>
